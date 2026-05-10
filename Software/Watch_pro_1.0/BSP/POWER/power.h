@@ -10,7 +10,7 @@
 #define BAT_CHECK_PIN		GPIO_PIN_1               // 电池电压ADC检测引脚：PA1
 
 #define CHARGE_PORT			GPIOA                      // 充电状态检测端口
-#define CHARGE_PIN			GPIO_PIN_2               // 充电状态检测引脚：PA2
+#define CHARGE_PIN			GPIO_PIN_0                  // 充电状态检测引脚：PA0
 
 #define POWER_PORT			GPIOA                      // 电源开关控制端口
 #define POWER_PIN				GPIO_PIN_3               // 电源开关控制引脚：PA3

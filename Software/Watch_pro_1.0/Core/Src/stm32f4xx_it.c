@@ -310,10 +310,10 @@ void DMA2_Stream7_IRQHandler(void)
 /* USER CODE BEGIN 1 */
 
 /**
-  * @brief  EXTI2外部中断处理函数
-  *         充电检测引脚中断（PA2等），检测到充电器插入/拔出时通知HardIntEvent任务
+  * @brief  EXTI0外部中断处理函数
+  *         充电检测引脚中断（PA0等），检测到充电器插入/拔出时通知HardIntEvent任务
   */
-void EXTI2_IRQHandler(void)
+void EXTI0_IRQHandler(void)
 {
   if(HardIntEventHandle != NULL)
   {
@@ -322,7 +322,7 @@ void EXTI2_IRQHandler(void)
   }
 
   // 调用HAL库EXTI中断处理，清除中断标志
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_2);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
 
 }
 

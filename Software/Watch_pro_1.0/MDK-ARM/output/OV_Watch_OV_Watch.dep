@@ -145,7 +145,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h)(0x69FC7FBC)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69FC7FBC)
-I (..\User\Tasks\Inc\user_TasksInit.h)(0x69FC84FA)
+I (..\User\Tasks\Inc\user_TasksInit.h)(0x6A00715D)
 F (../Core/Src/adc.c)(0x69FC90A5)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\adc.o --omf_browse .\output\adc.crf --depend .\output\adc.d)
 I (../Core/Inc/adc.h)(0x69FC93A1)
 I (../Core/Inc/main.h)(0x69FC9396)
@@ -381,7 +381,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdio.h)(0x5E8E3CC2)
-F (../Core/Src/stm32f4xx_it.c)(0x69FC9205)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\stm32f4xx_it.o --omf_browse .\output\stm32f4xx_it.crf --depend .\output\stm32f4xx_it.d)
+F (../Core/Src/stm32f4xx_it.c)(0x6A0071C8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\stm32f4xx_it.o --omf_browse .\output\stm32f4xx_it.crf --depend .\output\stm32f4xx_it.d)
 I (../Core/Inc/main.h)(0x69FC9396)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69FC7FBA)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x69FC94CF)
@@ -421,8 +421,8 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../Core/Inc/stm32f4xx_it.h)(0x69FC94E7)
 I (../BSP/KEY/key.h)(0x69FC91DD)
-I (../BSP/POWER/power.h)(0x69FC939B)
-I (..\User\Tasks\Inc\user_TasksInit.h)(0x69FC84FA)
+I (../BSP/POWER/power.h)(0x6A007095)
+I (..\User\Tasks\Inc\user_TasksInit.h)(0x6A00715D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69FC7FBC)
 I (../Core/Inc/FreeRTOSConfig.h)(0x69FC93FD)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69FC7FBC)
@@ -548,8 +548,8 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
-F (..\User\Tasks\Src\user_TasksInit.c)(0x69FC878C)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\user_tasksinit.o --omf_browse .\output\user_tasksinit.crf --depend .\output\user_tasksinit.d)
-I (..\User\Tasks\Inc\user_TasksInit.h)(0x69FC84FA)
+F (..\User\Tasks\Src\user_TasksInit.c)(0x6A007A25)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\user_tasksinit.o --omf_browse .\output\user_tasksinit.crf --depend .\output\user_tasksinit.d)
+I (..\User\Tasks\Inc\user_TasksInit.h)(0x6A00715D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69FC7FBC)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stddef.h)(0x5E8E3CC2)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E3CC2)
@@ -777,7 +777,7 @@ I (../Core/Inc/tim.h)(0x69FC94F5)
 I (../Core/Inc/stm32f4xx_it.h)(0x69FC94E7)
 I (../SYSTEM/delay.h)(0x69FC84C8)
 I (../SYSTEM/sys.h)(0x69FC84D4)
-I (..\User\Tasks\Inc\user_TasksInit.h)(0x69FC84FA)
+I (..\User\Tasks\Inc\user_TasksInit.h)(0x6A00715D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69FC7FBC)
 I (../Core/Inc/FreeRTOSConfig.h)(0x69FC93FD)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69FC7FBC)
@@ -793,7 +793,7 @@ I (..\User\Func\Inc\HWDataAccess.h)(0x69FC84E3)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdbool.h)(0x5E8E3CC2)
 I (../Core/Inc/rtc.h)(0x69FC9414)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
 I (../BSP/IIC/iic_hal.h)(0x69FC9161)
@@ -804,7 +804,7 @@ I (../BSP/AHT21/AHT21.h)(0x69FC9045)
 I (../BSP/SPL06_001/SPL06_001.h)(0x69FC9443)
 I (../BSP/LSM303DLH/LSM303.h)(0x69FC924C)
 I (../BSP/EM7028/em70x8.h)(0x69FC90E1)
-I (..\User\version.h)(0x6A002D5E)
+I (..\User\version.h)(0x6A00700D)
 I (../BSP/KEY/key.h)(0x69FC91DD)
 I (../BSP/LCD/lcd.h)(0x69FC9126)
 I (../BSP/TOUCH/CST816.h)(0x69FC94B4)
@@ -938,7 +938,7 @@ I (..\User\GUI_App\../Func/Inc/PageManager.h)(0x69FC84EF)
 I (..\User\GUI_App\../Func/Inc/../../GUI_App/ui.h)(0x69FC8680)
 I (..\User\GUI_App\Screens\Inc\ui_DateTimeSetPage.h)(0x69FC851B)
 F (..\User\Tasks\Src\user_RunModeTasks.c)(0x69FC8668)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\user_runmodetasks.o --omf_browse .\output\user_runmodetasks.crf --depend .\output\user_runmodetasks.d)
-I (..\User\Tasks\Inc\user_TasksInit.h)(0x69FC84FA)
+I (..\User\Tasks\Inc\user_TasksInit.h)(0x6A00715D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69FC7FBC)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stddef.h)(0x5E8E3CC2)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E3CC2)
@@ -1118,7 +1118,7 @@ I (../Core/Inc/stm32f4xx_it.h)(0x69FC94E7)
 I (../Core/Inc/usart.h)(0x69FC9501)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../SYSTEM/sys.h)(0x69FC84D4)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/TOUCH/CST816.h)(0x69FC94B4)
 I (../BSP/IIC/iic_hal.h)(0x69FC9161)
 I (../SYSTEM/delay.h)(0x69FC84C8)
@@ -1136,7 +1136,7 @@ I (../BSP/SPL06_001/SPL06_001.h)(0x69FC9443)
 I (../BSP/LSM303DLH/LSM303.h)(0x69FC924C)
 I (../BSP/EM7028/em70x8.h)(0x69FC90E1)
 F (..\User\Tasks\Src\user_KeyTask.c)(0x69FC85AE)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\user_keytask.o --omf_browse .\output\user_keytask.crf --depend .\output\user_keytask.d)
-I (..\User\Tasks\Inc\user_TasksInit.h)(0x69FC84FA)
+I (..\User\Tasks\Inc\user_TasksInit.h)(0x6A00715D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69FC7FBC)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stddef.h)(0x5E8E3CC2)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E3CC2)
@@ -1313,7 +1313,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../BSP/KEY/key.h)(0x69FC91DD)
 F (..\User\Tasks\Src\user_DataSaveTask.c)(0x69FC853F)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\user_datasavetask.o --omf_browse .\output\user_datasavetask.crf --depend .\output\user_datasavetask.d)
 I (..\User\Tasks\Inc\user_DataSaveTask.h)(0x69FC84AD)
-I (..\User\Tasks\Inc\user_TasksInit.h)(0x69FC84FA)
+I (..\User\Tasks\Inc\user_TasksInit.h)(0x6A00715D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69FC7FBC)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stddef.h)(0x5E8E3CC2)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E3CC2)
@@ -1497,7 +1497,7 @@ I (../SYSTEM/sys.h)(0x69FC84D4)
 I (../BSP/MPU6050/eMPL/inv_mpu_dmp_motion_driver.h)(0x69FC94D8)
 I (..\User\Func\Inc\HWDataAccess.h)(0x69FC84E3)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\math.h)(0x5E8E3CC2)
@@ -1548,7 +1548,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../Core/Inc/stm32f4xx_it.h)(0x69FC94E7)
 I (../Core/Inc/rtc.h)(0x69FC9414)
-I (..\User\Tasks\Inc\user_TasksInit.h)(0x69FC84FA)
+I (..\User\Tasks\Inc\user_TasksInit.h)(0x6A00715D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69FC7FBC)
 I (../Core/Inc/FreeRTOSConfig.h)(0x69FC93FD)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69FC7FBC)
@@ -1690,7 +1690,7 @@ I (..\User\GUI_App\Screens\Inc\ui_HomePage.h)(0x69FC855D)
 I (..\User\GUI_App\Screens\Inc\ui_DateTimeSetPage.h)(0x69FC851B)
 I (..\User\Func\Inc\HWDataAccess.h)(0x69FC84E3)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../SYSTEM/sys.h)(0x69FC84D4)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
@@ -1703,9 +1703,9 @@ I (../BSP/AHT21/AHT21.h)(0x69FC9045)
 I (../BSP/SPL06_001/SPL06_001.h)(0x69FC9443)
 I (../BSP/LSM303DLH/LSM303.h)(0x69FC924C)
 I (../BSP/EM7028/em70x8.h)(0x69FC90E1)
-I (..\User\version.h)(0x6A002D5E)
+I (..\User\version.h)(0x6A00700D)
 F (..\User\Tasks\Src\user_ChargCheckTask.c)(0x69FC8515)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\user_chargchecktask.o --omf_browse .\output\user_chargchecktask.crf --depend .\output\user_chargchecktask.d)
-I (..\User\Tasks\Inc\user_TasksInit.h)(0x69FC84FA)
+I (..\User\Tasks\Inc\user_TasksInit.h)(0x6A00715D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69FC7FBC)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stddef.h)(0x5E8E3CC2)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E3CC2)
@@ -1885,7 +1885,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (..\User\Func\Inc\HWDataAccess.h)(0x69FC84E3)
 I (../Core/Inc/rtc.h)(0x69FC9414)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../SYSTEM/sys.h)(0x69FC84D4)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
@@ -1900,7 +1900,7 @@ I (../BSP/LSM303DLH/LSM303.h)(0x69FC924C)
 I (../BSP/EM7028/em70x8.h)(0x69FC90E1)
 I (../Core/Inc/stm32f4xx_it.h)(0x69FC94E7)
 F (..\User\Tasks\Src\user_SensUpdateTask.c)(0x69FC8703)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\user_sensupdatetask.o --omf_browse .\output\user_sensupdatetask.crf --depend .\output\user_sensupdatetask.d)
-I (..\User\Tasks\Inc\user_TasksInit.h)(0x69FC84FA)
+I (..\User\Tasks\Inc\user_TasksInit.h)(0x6A00715D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69FC7FBC)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stddef.h)(0x5E8E3CC2)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E3CC2)
@@ -2041,7 +2041,7 @@ I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdio.h)(0x5E8E3CC2)
 I (..\User\Func\Inc\../../GUI_App/../Func/Inc/PageManager.h)(0x69FC84EF)
 I (..\User\Tasks\Inc\user_SensUpdateTask.h)(0x69FC84E2)
 I (..\User\GUI_App\Screens\Inc\ui_HomePage.h)(0x69FC855D)
-I (..\User\GUI_App\Screens\Inc\ui_MenuPage.h)(0x6A002E1A)
+I (..\User\GUI_App\Screens\Inc\ui_MenuPage.h)(0x6A00700D)
 I (..\User\GUI_App\Screens\Inc\ui_SetPage.h)(0x69FC85B8)
 I (..\User\GUI_App\Screens\Inc\ui_HRPage.h)(0x69FC8565)
 I (..\User\GUI_App\Screens\Inc\ui_SPO2Page.h)(0x69FC85C1)
@@ -2095,14 +2095,14 @@ I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdlib.h)(0x5E8E3CC2)
 I (..\User\Func\Inc\HWDataAccess.h)(0x69FC84E3)
 I (../Core/Inc/rtc.h)(0x69FC9414)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\math.h)(0x5E8E3CC2)
 I (../BSP/MPU6050/eMPL/inv_mpu.h)(0x69FC94CE)
 I (../BSP/MPU6050/eMPL/inv_mpu_dmp_motion_driver.h)(0x69FC94D8)
 F (..\User\Tasks\Src\user_ScrRenewTask.c)(0x69FC8684)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\user_scrrenewtask.o --omf_browse .\output\user_scrrenewtask.crf --depend .\output\user_scrrenewtask.d)
-I (..\User\Tasks\Inc\user_TasksInit.h)(0x69FC84FA)
+I (..\User\Tasks\Inc\user_TasksInit.h)(0x6A00715D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69FC7FBC)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stddef.h)(0x5E8E3CC2)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E3CC2)
@@ -2277,7 +2277,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (..\User\GUI_App\Screens\Inc\ui_HomePage.h)(0x69FC855D)
-I (..\User\GUI_App\Screens\Inc\ui_MenuPage.h)(0x6A002E1A)
+I (..\User\GUI_App\Screens\Inc\ui_MenuPage.h)(0x6A00700D)
 F (..\User\Func\Src\StrCalculate.c)(0x69FC9BFA)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\strcalculate.o --omf_browse .\output\strcalculate.crf --depend .\output\strcalculate.d)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdio.h)(0x5E8E3CC2)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdlib.h)(0x5E8E3CC2)
@@ -2326,7 +2326,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../SYSTEM/sys.h)(0x69FC84D4)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
@@ -2467,7 +2467,7 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.h)(0x69FC7FBC)
 I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdio.h)(0x5E8E3CC2)
 I (..\User\Func\Src\../Inc/../../GUI_App/../Func/Inc/PageManager.h)(0x69FC84EF)
 I (..\User\Func\Src\../../GUI_App/Screens/Inc/ui_HomePage.h)(0x69FC855D)
-I (..\User\Func\Src\../../GUI_App/Screens/Inc/ui_MenuPage.h)(0x6A002E1A)
+I (..\User\Func\Src\../../GUI_App/Screens/Inc/ui_MenuPage.h)(0x6A00700D)
 F (..\User\GUI_App\ui.c)(0x69FC866E)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\ui.o --omf_browse .\output\ui.crf --depend .\output\ui.d)
 I (..\User\GUI_App\ui.h)(0x69FC8680)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x69FC7FBC)
@@ -2596,7 +2596,7 @@ I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdio.h)(0x5E8E3CC2)
 I (..\User\GUI_App\../Func/Inc/PageManager.h)(0x69FC84EF)
 I (..\User\GUI_App\../Func/Inc/../../GUI_App/ui.h)(0x69FC8680)
 I (..\User\GUI_App\./Screens/Inc/ui_HomePage.h)(0x69FC855D)
-I (..\User\GUI_App\./Screens/Inc/ui_MenuPage.h)(0x6A002E1A)
+I (..\User\GUI_App\./Screens/Inc/ui_MenuPage.h)(0x6A00700D)
 I (..\User\GUI_App\ui_helpers.h)(0x69FC8725)
 F (..\User\GUI_App\ui_helpers.c)(0x69FC86E8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\ui_helpers.o --omf_browse .\output\ui_helpers.crf --depend .\output\ui_helpers.d)
 I (..\User\GUI_App\ui_helpers.h)(0x69FC8725)
@@ -2855,7 +2855,7 @@ I (..\User\GUI_App\Screens\Src\../../../Func/Inc/PageManager.h)(0x69FC84EF)
 I (..\User\GUI_App\Screens\Src\../../../Func/Inc/../../GUI_App/ui.h)(0x69FC8680)
 I (..\User\GUI_App\Screens\Src\../../ui_helpers.h)(0x69FC8725)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_AboutPage.h)(0x69FC84E0)
-I (..\User\GUI_App\Screens\Src\../../../version.h)(0x6A002D5E)
+I (..\User\GUI_App\Screens\Src\../../../version.h)(0x6A00700D)
 F (..\User\GUI_App\Screens\Src\ui_CalendarPage.c)(0x69FC8648)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\ui_calendarpage.o --omf_browse .\output\ui_calendarpage.crf --depend .\output\ui_calendarpage.d)
 I (..\User\GUI_App\Screens\Src\../../ui.h)(0x69FC8680)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x69FC7FBC)
@@ -3023,7 +3023,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../SYSTEM/sys.h)(0x69FC84D4)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
@@ -3203,7 +3203,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../SYSTEM/sys.h)(0x69FC84D4)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
@@ -3383,7 +3383,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../SYSTEM/sys.h)(0x69FC84D4)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
@@ -3695,7 +3695,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../SYSTEM/sys.h)(0x69FC84D4)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
@@ -3875,7 +3875,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../SYSTEM/sys.h)(0x69FC84D4)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
@@ -4017,7 +4017,7 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.h)(0x69FC7FBC)
 I (..\User\GUI_App\Screens\Src\../../../Func/Inc/PageManager.h)(0x69FC84EF)
 I (..\User\GUI_App\Screens\Src\../../../Func/Inc/../../GUI_App/ui.h)(0x69FC8680)
 I (..\User\GUI_App\Screens\Src\../../ui_helpers.h)(0x69FC8725)
-I (..\User\GUI_App\Screens\Src\../Inc/ui_MenuPage.h)(0x6A002E1A)
+I (..\User\GUI_App\Screens\Src\../Inc/ui_MenuPage.h)(0x6A00700D)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_Game2048Page.h)(0x69FC852D)
 I (..\User\GUI_App\Screens\Src\../../../Func/Inc/HWDataAccess.h)(0x69FC84E3)
 I (../Core/Inc/rtc.h)(0x69FC9414)
@@ -4057,7 +4057,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../SYSTEM/sys.h)(0x69FC84D4)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
@@ -4199,7 +4199,7 @@ I (../Middlewares/LVGL/GUI/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.h)(0x69FC7FBC)
 I (..\User\GUI_App\Screens\Src\../../../Func/Inc/PageManager.h)(0x69FC84EF)
 I (..\User\GUI_App\Screens\Src\../../../Func/Inc/../../GUI_App/ui.h)(0x69FC8680)
 I (..\User\GUI_App\Screens\Src\../../ui_helpers.h)(0x69FC8725)
-I (..\User\GUI_App\Screens\Src\../Inc/ui_MenuPage.h)(0x6A002E1A)
+I (..\User\GUI_App\Screens\Src\../Inc/ui_MenuPage.h)(0x6A00700D)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_GameMemPage.h)(0x69FC8534)
 I (..\User\GUI_App\Screens\Src\../../../Func/Inc/HWDataAccess.h)(0x69FC84E3)
 I (../Core/Inc/rtc.h)(0x69FC9414)
@@ -4239,7 +4239,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../SYSTEM/sys.h)(0x69FC84D4)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
@@ -4380,7 +4380,7 @@ I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdio.h)(0x5E8E3CC2)
 I (..\User\GUI_App\Screens\Src\../../../Func/Inc/PageManager.h)(0x69FC84EF)
 I (..\User\GUI_App\Screens\Src\../../../Func/Inc/../../GUI_App/ui.h)(0x69FC8680)
 I (..\User\GUI_App\Screens\Src\../../ui_helpers.h)(0x69FC8725)
-I (..\User\GUI_App\Screens\Src\../Inc/ui_MenuPage.h)(0x6A002E1A)
+I (..\User\GUI_App\Screens\Src\../Inc/ui_MenuPage.h)(0x6A00700D)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_GameSelectPage.h)(0x69FC853A)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_Game2048Page.h)(0x69FC852D)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_GameMemPage.h)(0x69FC8534)
@@ -4513,7 +4513,7 @@ I (..\User\GUI_App\Screens\Src\../../../Func/Inc/PageManager.h)(0x69FC84EF)
 I (..\User\GUI_App\Screens\Src\../../../Func/Inc/../../GUI_App/ui.h)(0x69FC8680)
 I (..\User\GUI_App\Screens\Src\../../ui_helpers.h)(0x69FC8725)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_HomePage.h)(0x69FC855D)
-I (..\User\GUI_App\Screens\Src\../Inc/ui_MenuPage.h)(0x6A002E1A)
+I (..\User\GUI_App\Screens\Src\../Inc/ui_MenuPage.h)(0x6A00700D)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_HRPage.h)(0x69FC8565)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_SetPage.h)(0x69FC85B8)
 I (..\User\GUI_App\Screens\Src\../../../Func/Inc/HWDataAccess.h)(0x69FC84E3)
@@ -4554,7 +4554,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../SYSTEM/sys.h)(0x69FC84D4)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
@@ -4734,7 +4734,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../SYSTEM/sys.h)(0x69FC84D4)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
@@ -4875,7 +4875,7 @@ I (D:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdio.h)(0x5E8E3CC2)
 I (..\User\GUI_App\Screens\Src\../../../Func/Inc/PageManager.h)(0x69FC84EF)
 I (..\User\GUI_App\Screens\Src\../../../Func/Inc/../../GUI_App/ui.h)(0x69FC8680)
 I (..\User\GUI_App\Screens\Src\../../ui_helpers.h)(0x69FC8725)
-F (..\User\GUI_App\Screens\Src\ui_MenuPage.c)(0x69FC8D4B)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\ui_menupage.o --omf_browse .\output\ui_menupage.crf --depend .\output\ui_menupage.d)
+F (..\User\GUI_App\Screens\Src\ui_MenuPage.c)(0x6A007A25)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\ui_menupage.o --omf_browse .\output\ui_menupage.crf --depend .\output\ui_menupage.d)
 I (..\User\GUI_App\Screens\Src\../../ui.h)(0x69FC8680)
 I (../Middlewares/LVGL/GUI/lvgl/lvgl.h)(0x69FC7FBC)
 I (../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h)(0x69FC7FBC)
@@ -5004,7 +5004,7 @@ I (..\User\GUI_App\Screens\Src\../../../Func/Inc/PageManager.h)(0x69FC84EF)
 I (..\User\GUI_App\Screens\Src\../../../Func/Inc/../../GUI_App/ui.h)(0x69FC8680)
 I (..\User\GUI_App\Screens\Src\../../ui_helpers.h)(0x69FC8725)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_HomePage.h)(0x69FC855D)
-I (..\User\GUI_App\Screens\Src\../Inc/ui_MenuPage.h)(0x6A002E1A)
+I (..\User\GUI_App\Screens\Src\../Inc/ui_MenuPage.h)(0x6A00700D)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_Megboxes.h)(0x69FC856A)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_CalendarPage.h)(0x69FC84E7)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_ComputerPage.h)(0x69FC8502)
@@ -5407,7 +5407,7 @@ I (..\User\GUI_App\Screens\Src\../../../Func/Inc/PageManager.h)(0x69FC84EF)
 I (..\User\GUI_App\Screens\Src\../../../Func/Inc/../../GUI_App/ui.h)(0x69FC8680)
 I (..\User\GUI_App\Screens\Src\../../ui_helpers.h)(0x69FC8725)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_HomePage.h)(0x69FC855D)
-I (..\User\GUI_App\Screens\Src\../Inc/ui_MenuPage.h)(0x6A002E1A)
+I (..\User\GUI_App\Screens\Src\../Inc/ui_MenuPage.h)(0x6A00700D)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_SetPage.h)(0x69FC85B8)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_OffTimePage.h)(0x69FC85A6)
 I (..\User\GUI_App\Screens\Src\../Inc/ui_DateTimeSetPage.h)(0x69FC851B)
@@ -5449,7 +5449,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../SYSTEM/sys.h)(0x69FC84D4)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
@@ -5629,7 +5629,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../BSP/KT6328/kt6328.h)(0x69FC9202)
-I (../BSP/POWER/power.h)(0x69FC939B)
+I (../BSP/POWER/power.h)(0x6A007095)
 I (../BSP/LCD/lcd_init.h)(0x69FC919C)
 I (../SYSTEM/sys.h)(0x69FC84D4)
 I (../BSP/MPU6050/MPU6050.h)(0x69FC9338)
@@ -8796,8 +8796,8 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
-F (..\BSP\POWER\power.c)(0x69FC9390)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\power.o --omf_browse .\output\power.crf --depend .\output\power.d)
-I (..\BSP\POWER\power.h)(0x69FC939B)
+F (..\BSP\POWER\power.c)(0x6A0075F9)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../SYSTEM -I ../BSP/LCD -I ../BSP/AHT21 -I ../BSP/BL24C02 -I ../BSP/IIC -I ../BSP/LSM303DLH -I ../BSP/MPU6050 -I ../BSP/OWDG -I ../BSP/POWER -I ../BSP/SPL06_001 -I ../BSP/EM7028 -I ../BSP/TOUCH -I ../BSP/KEY -I ../BSP/KT6328 -I ../Middlewares/LVGL/GUI -I ../Middlewares/LVGL/GUI/lvgl/src -I ../Middlewares/LVGL/GUI/lvgl -I ../Middlewares/LVGL/GUI/porting -I ../BSP/MPU6050/eMPL -I ..\User -I ..\User\GUI_App\Screens\Inc -I ..\User\Tasks\Inc -I ..\User\Func\Inc -I ..\User\GUI_App --locale=english-I.\RTE\_OV_Watch-ID:\Packages\Arm\Packs\ARM\CMSIS\6.3.0\CMSIS\Core\Include-D__UVISION_VERSION="543" -DSTM32F411xE -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F411xE-o .\output\power.o --omf_browse .\output\power.crf --depend .\output\power.d)
+I (..\BSP\POWER\power.h)(0x6A007095)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x69FC7FBA)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x69FC94CF)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x69FC7FBC)
@@ -9123,7 +9123,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x69FC7FBC)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x69FC7FBC)
 I (../SYSTEM/delay.h)(0x69FC84C8)
 I (../SYSTEM/sys.h)(0x69FC84D4)
-I (..\User\Tasks\Inc\user_TasksInit.h)(0x69FC84FA)
+I (..\User\Tasks\Inc\user_TasksInit.h)(0x6A00715D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69FC7FBC)
 I (../Core/Inc/FreeRTOSConfig.h)(0x69FC93FD)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69FC7FBC)

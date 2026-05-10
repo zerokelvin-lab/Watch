@@ -152,6 +152,8 @@ osMessageQueueId_t IdleBreak_MessageQueue;
 osMessageQueueId_t HomeUpdata_MessageQueue;
 /** @brief 数据保存消息队列 */
 osMessageQueueId_t DataSave_MessageQueue;
+/** @brief SOS消息队列 */
+osMessageQueueId_t SOS_MessageQueue;
 /** @brief 硬件中断事件句柄 */
 osEventFlagsId_t HardIntEventHandle;
 
@@ -178,6 +180,7 @@ void User_Tasks_Init(void)
 	Stop_MessageQueue = osMessageQueueNew(1, 1, NULL);       // 休眠消息队列
 	IdleBreak_MessageQueue = osMessageQueueNew(1, 1, NULL);  // 空闲打断消息队列
 	HomeUpdata_MessageQueue = osMessageQueueNew(1, 1, NULL); // 首页更新消息队列
+  SOS_MessageQueue = osMessageQueueNew(1, 1, NULL);         // SOS消息队列
 	DataSave_MessageQueue = osMessageQueueNew(2, 1, NULL);   // 数据保存消息队列
   HardIntEventHandle = osEventFlagsNew(NULL);               // 硬件中断事件标志组
 

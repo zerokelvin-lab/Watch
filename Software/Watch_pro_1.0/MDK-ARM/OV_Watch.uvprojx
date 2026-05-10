@@ -616,6 +616,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\Tasks\Src\user_ScrRenewTask.c</FilePath>
             </File>
+            <File>
+              <FileName>user_SosTask.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Tasks\Src\user_SosTask.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
