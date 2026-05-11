@@ -104,6 +104,7 @@ void StopEnterTask(void *argument)
 
 			//usart  // 关闭串口以省电
 			HAL_UART_MspDeInit(&huart1);
+			HAL_UART_MspDeInit(&huart2);
 
 			//lcd  // 关闭显示屏
 			LCD_RES_Clr();
@@ -173,6 +174,10 @@ void StopEnterTask(void *argument)
 
 			//usart  // 恢复串口
 			HAL_UART_MspInit(&huart1);
+			HAL_UART_MspInit(&huart2);
+			// 重新启动UART2 DMA接收
+			HAL_UART_Receive_DMA(&huart2,(uint8_t*)HardInt_receive2_str,25);
+			__HAL_UART_ENABLE_IT(&huart2,UART_IT_IDLE);
 			//lcd  // 恢复显示屏
 			LCD_Init();
 			LCD_Set_Light(ui_LightSliderValue);

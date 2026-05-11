@@ -12,13 +12,8 @@
 #define CHARGE_PORT			GPIOA                      // 充电状态检测端口
 #define CHARGE_PIN			GPIO_PIN_0                  // 充电状态检测引脚：PA0
 
-#define POWER_PORT			GPIOA                      // 电源开关控制端口
-#define POWER_PIN				GPIO_PIN_3               // 电源开关控制引脚：PA3
-
 /* ====== 电源管理API函数声明 ====== */
 void Power_Pins_Init(void);          // 初始化电源控制引脚
-void Power_Enable(void);             // 开启系统电源
-void Power_DisEnable(void);          // 关闭系统电源
 float BatCheck(void);                // 单次采集电池电压
 float BatCheck_8times(void);         // 8次平均采集电池电压
 uint8_t ChargeCheck(void);           // 检测充电状态（1=充电中）

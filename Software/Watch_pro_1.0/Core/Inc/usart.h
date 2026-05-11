@@ -35,13 +35,16 @@ extern "C" {
 
 // USART1外设句柄（全局变量，在usart.c中定义）
 extern UART_HandleTypeDef huart1;
+// USART2外设句柄（全局变量，在usart.c中定义）
+extern UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
 
-// USART1初始化函数声明
+// USART初始化函数声明
 void MX_USART1_UART_Init(void);
+void MX_USART2_UART_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 

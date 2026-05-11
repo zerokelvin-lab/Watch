@@ -39,7 +39,6 @@
 .\output\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 .\output\stm32f4xx_it.o: ../Core/Inc/stm32f4xx_it.h
 .\output\stm32f4xx_it.o: ../BSP/KEY/key.h
-.\output\stm32f4xx_it.o: ../BSP/POWER/power.h
 .\output\stm32f4xx_it.o: ..\User\Tasks\Inc\user_TasksInit.h
 .\output\stm32f4xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 .\output\stm32f4xx_it.o: ../Core/Inc/FreeRTOSConfig.h

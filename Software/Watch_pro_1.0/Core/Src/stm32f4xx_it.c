@@ -25,7 +25,6 @@
 /* USER CODE BEGIN Includes */
 // 用户自定义模块头文件
 #include "key.h"      // 按键驱动
-#include "power.h"    // 电源管理
 #include "user_TasksInit.h"  // 用户任务初始化
 /* USER CODE END Includes */
 
@@ -65,12 +64,16 @@ extern RTC_HandleTypeDef hrtc;
 extern DMA_HandleTypeDef hdma_spi1_tx;
 extern DMA_HandleTypeDef hdma_usart1_rx;
 extern DMA_HandleTypeDef hdma_usart1_tx;
+extern DMA_HandleTypeDef hdma_usart2_rx;
+extern DMA_HandleTypeDef hdma_usart2_tx;
 extern UART_HandleTypeDef huart1;
+extern UART_HandleTypeDef huart2;
 extern TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN EV */
 // UART硬件中断接收缓冲区（25字节，通过IDLE中断+DMA接收变长数据）
 uint8_t HardInt_receive_str[25];
+uint8_t HardInt_receive2_str[25];
 
 /* USER CODE END EV */
 
@@ -196,8 +199,7 @@ void RTC_WKUP_IRQHandler(void)
 
 /**
   * @brief  TIM1更新中断和TIM10全局中断处理函数
-  *         同时处理HAL时基（TIM1）和KEY1长按检测（≥3秒则触发电源关闭）
-  *         在中断中采样KEY1引脚电平，若持续低电平达3秒则调用Power_DisEnable()
+  *         同时处理HAL时基（TIM1）和KEY1长按检测计数
   */
 void TIM1_UP_TIM10_IRQHandler(void)
 {
@@ -208,11 +210,6 @@ void TIM1_UP_TIM10_IRQHandler(void)
   {
     // KEY1按下（低电平有效），计数器累加
     key1_long_press += 1;
-    if(key1_long_press >= 3000)
-    {
-      // 长按超过3秒（3000ms），触发电源关闭
-      Power_DisEnable();
-    }
   }
   else
   {
@@ -257,6 +254,31 @@ void USART1_IRQHandler(void)
   /* USER CODE BEGIN USART1_IRQn 1 */
 
   /* USER CODE END USART1_IRQn 1 */
+}
+
+/**
+  * @brief  USART2全局中断处理函数
+  *         使用UART IDLE空闲中断检测一帧数据接收完成
+  *         检测到IDLE标志后发送事件标志通知HardIntEvent任务处理接收数据
+  */
+void USART2_IRQHandler(void)
+{
+  /* USER CODE BEGIN USART2_IRQn 0 */
+  if(__HAL_UART_GET_FLAG(&huart2,UART_FLAG_IDLE)!=RESET)
+  {
+    if(HardIntEventHandle != NULL)
+    {
+      osEventFlagsSet(HardIntEventHandle, HARDINT_EVENT_UART2);
+    }
+    __HAL_UART_CLEAR_FLAG(&huart2,UART_FLAG_IDLE);
+    HAL_UART_DMAStop(&huart2);
+    HAL_UART_Receive_DMA(&huart2, HardInt_receive2_str, 25);
+  }
+  /* USER CODE END USART2_IRQn 0 */
+  HAL_UART_IRQHandler(&huart2);
+  /* USER CODE BEGIN USART2_IRQn 1 */
+
+  /* USER CODE END USART2_IRQn 1 */
 }
 
 /**
@@ -308,6 +330,36 @@ void DMA2_Stream7_IRQHandler(void)
 }
 
 /* USER CODE BEGIN 1 */
+
+/**
+  * @brief  DMA1 Stream5全局中断处理函数
+  *         处理USART2_RX DMA接收中断
+  */
+void DMA1_Stream5_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA1_Stream5_IRQn 0 */
+
+  /* USER CODE END DMA1_Stream5_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_usart2_rx);
+  /* USER CODE BEGIN DMA1_Stream5_IRQn 1 */
+
+  /* USER CODE END DMA1_Stream5_IRQn 1 */
+}
+
+/**
+  * @brief  DMA1 Stream6全局中断处理函数
+  *         处理USART2_TX DMA发送中断
+  */
+void DMA1_Stream6_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA1_Stream6_IRQn 0 */
+
+  /* USER CODE END DMA1_Stream6_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_usart2_tx);
+  /* USER CODE BEGIN DMA1_Stream6_IRQn 1 */
+
+  /* USER CODE END DMA1_Stream6_IRQn 1 */
+}
 
 /**
   * @brief  EXTI0外部中断处理函数

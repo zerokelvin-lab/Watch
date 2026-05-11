@@ -18,9 +18,12 @@ extern "C" {
 #define KEY2_PIN	GPIO_PIN_4      /** @brief KEY2/Wake按键引脚 */
 #define KEY2 HAL_GPIO_ReadPin(KEY2_PORT,KEY2_PIN)  /** @brief 读取KEY2引脚电平 */
 	
+/* ====== 双击检测参数 ====== */
+#define KEY_DOUBLE_CLICK_THRESHOLD 300 /** @brief 双击间隔阈值(ms) */
+
 void Key_Port_Init(void);              /** @brief 初始化按键GPIO和外部中断 */
 void Key_Interrupt_Callback(void);     /** @brief 按键中断回调函数 */
-uint8_t KeyScan(uint8_t mode);         /** @brief 按键扫描(带消抖) @param mode 1=连续扫描, 0=单次触发 @return 按键键值(0=无按键, 1=KEY1, 2=KEY2) */
+uint8_t KeyScan(uint8_t mode);         /** @brief 按键扫描(带消抖+双击检测) @param mode 1=连续扫描, 0=单次触发 @return 按键键值(0=无按键, 1=KEY1单击, 2=KEY2单击, 3=KEY1双击, 4=KEY2双击) */
 
 
 #ifdef __cplusplus

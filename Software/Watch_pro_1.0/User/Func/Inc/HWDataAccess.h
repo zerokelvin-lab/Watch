@@ -144,7 +144,7 @@ typedef struct
     uint8_t power_remain;          // 电池剩余电量百分比
 
     void (*Init)(void);            // 电源初始化
-    void (*Shutdown)(void);        // 关机
+    void (*Shutdown)(void);        // 关机（电源由硬件管理，软件无操作）
     uint8_t (*BatCalculate)(void); // 计算电池电量
 } HW_Power_InterfaceTypeDef;
 

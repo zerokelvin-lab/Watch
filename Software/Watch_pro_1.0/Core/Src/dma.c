@@ -44,10 +44,19 @@ void MX_DMA_Init(void)
 {
 
   /* DMA controller clock enable */
-  // 使能DMA2控制器时钟
+  // 使能DMA1和DMA2控制器时钟
+  __HAL_RCC_DMA1_CLK_ENABLE();
   __HAL_RCC_DMA2_CLK_ENABLE();
 
   /* DMA interrupt init */
+  // 配置DMA1各Stream的中断优先级和使能（USART2）
+  /* DMA1_Stream5_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
+  /* DMA1_Stream6_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream6_IRQn);
+
   // 配置DMA2各Stream的中断优先级和使能
   /* DMA2_Stream2_IRQn interrupt configuration */
   // DMA2 Stream2中断：用于SPI1_TX，优先级5

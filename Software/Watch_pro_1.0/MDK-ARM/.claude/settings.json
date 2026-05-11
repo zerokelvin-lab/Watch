@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/zerokelvin/Desktop/OV-Watch/Software/Watch_pro_1.0/**)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\zerokelvin\\Desktop\\OV-Watch\\Software\\Watch_pro_1.0\\BSP\\POWER",
+      "c:\\Users\\zerokelvin\\Desktop\\OV-Watch\\Software\\Watch_pro_1.0\\User\\Func\\Src",
+      "c:\\Users\\zerokelvin\\Desktop\\OV-Watch\\Software\\Watch_pro_1.0\\Core\\Src",
+      "c:\\Users\\zerokelvin\\Desktop\\OV-Watch\\Software\\Watch_pro_1.0\\Core\\Inc",
+      "c:\\Users\\zerokelvin\\Desktop\\OV-Watch\\Software\\Watch_pro_1.0\\BSP\\KEY",
+      "c:\\Users\\zerokelvin\\Desktop\\OV-Watch\\Software\\Watch_pro_1.0\\User\\Tasks\\Src",
+      "c:\\Users\\zerokelvin\\Desktop\\OV-Watch\\Software\\Watch_pro_1.0\\User\\Tasks\\Inc"
+    ]
+  }
+}

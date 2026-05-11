@@ -63,6 +63,10 @@ void HardwareInitTask(void *argument)
     HAL_UART_Receive_DMA(&huart1,(uint8_t*)HardInt_receive_str,25);
     __HAL_UART_ENABLE_IT(&huart1,UART_IT_IDLE);  // 使能串口空闲中断
 
+    // usart2 start  // 启动UART2 DMA接收
+    HAL_UART_Receive_DMA(&huart2,(uint8_t*)HardInt_receive2_str,25);
+    __HAL_UART_ENABLE_IT(&huart2,UART_IT_IDLE);
+
     // PWM Start  // 启动PWM（用于背光控制）
     HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_3);
 

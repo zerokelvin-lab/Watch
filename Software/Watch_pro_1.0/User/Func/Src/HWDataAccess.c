@@ -122,15 +122,12 @@ void HW_Power_Init(void)
 }
 
 /**
- * @brief  执行关机操作，断开电源
+ * @brief  执行关机操作（电源由硬件管理，软件无需操作）
  * @param  无
  * @return 无
  */
 void HW_Power_Shutdown(void)
 {
-	#if HW_USE_BAT
-		Power_DisEnable();
-	#endif
 }
 
 /**

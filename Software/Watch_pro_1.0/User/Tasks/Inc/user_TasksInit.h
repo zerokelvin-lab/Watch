@@ -23,6 +23,8 @@ extern "C" {
 #define HARDINT_EVENT_MPU   (1U << 2)
 /** @brief SOS中断事件标志 - SOS报告检测中断 */
 #define HARDINT_EVENT_SOS   (1U << 3)
+/** @brief UART2中断事件标志 - UART2串口收到数据时置位 */
+#define HARDINT_EVENT_UART2 (1U << 4)
 
 /* ====== 消息队列：任务间通信 ====== */
 /** @brief 按键消息队列 - 传递按键键值（1=短按, 2=长按） */

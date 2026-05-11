@@ -22,6 +22,7 @@
 ".\output\user_chargchecktask.o"
 ".\output\user_sensupdatetask.o"
 ".\output\user_scrrenewtask.o"
+".\output\user_sostask.o"
 ".\output\strcalculate.o"
 ".\output\hwdataaccess.o"
 ".\output\pagemanager.o"

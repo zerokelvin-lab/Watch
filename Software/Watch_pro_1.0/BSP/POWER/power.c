@@ -13,8 +13,7 @@
 /**
  * @brief  初始化电源控制相关引脚
  * @retval 无
- * @note   POWER_PIN(PA3): 电源开关控制引脚，推挽输出
- *         CHARGE_PIN(PA0): 充电状态检测引脚，上升/下降沿中断
+ * @note   CHARGE_PIN(PA0): 充电状态检测引脚，上升/下降沿中断
  *         EXTI0中断优先级: 抢占5，子优先级0
  */
 void Power_Pins_Init()
@@ -24,16 +23,6 @@ void Power_Pins_Init()
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOA_CLK_ENABLE();                    // 使能GPIOA时钟
 
-//   /*Configure GPIO pin Output Level */
-//   HAL_GPIO_WritePin(POWER_PORT, POWER_PIN, GPIO_PIN_RESET); // 初始状态关闭电源
-
-//   /*Configure GPIO pin : PA3（电源开关控制引脚，推挽输出） */
-//   GPIO_InitStruct.Pin = POWER_PIN;
-//   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;       // 推挽输出模式
-//   GPIO_InitStruct.Pull = GPIO_NOPULL;               // 无上下拉
-//   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;      // 低速输出
-//   HAL_GPIO_Init(POWER_PORT, &GPIO_InitStruct);
-
   /*Configure GPIO pin : PA0（充电状态检测引脚，双边沿中断） */
   GPIO_InitStruct.Pin = CHARGE_PIN;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING; // 上升沿和下降沿均触发中断
@@ -42,26 +31,6 @@ void Power_Pins_Init()
 
   HAL_NVIC_SetPriority(EXTI0_IRQn, 5, 0);           // 设置EXTI0中断优先级
   HAL_NVIC_EnableIRQ(EXTI0_IRQn);                   // 使能EXTI0中断
-}
-
-/* ====== 电源开关控制 ====== */
-
-/**
- * @brief  开启系统电源
- * @retval 无
- */
-void Power_Enable()
-{
-	//HAL_GPIO_WritePin(POWER_PORT,POWER_PIN,GPIO_PIN_SET); // 电源使能引脚拉高
-}
-
-/**
- * @brief  关闭系统电源
- * @retval 无
- */
-void Power_DisEnable()
-{
-	//HAL_GPIO_WritePin(POWER_PORT,POWER_PIN,GPIO_PIN_RESET); // 电源使能引脚拉低
 }
 
 /* ====== 充电检测 ====== */
@@ -173,5 +142,4 @@ uint8_t PowerCalculate()
 void Power_Init(void)
 {
 	Power_Pins_Init();                               // 初始化GPIO引脚
-	//Power_Enable();                                  // 开启系统电源
 }
