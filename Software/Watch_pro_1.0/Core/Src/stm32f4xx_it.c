@@ -25,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 // 用户自定义模块头文件
 #include "key.h"      // 按键驱动
+#include "mks_142.h"  // MKS_142健康模块驱动
 #include "user_TasksInit.h"  // 用户任务初始化
 /* USER CODE END Includes */
 
@@ -64,8 +65,6 @@ extern RTC_HandleTypeDef hrtc;
 extern DMA_HandleTypeDef hdma_spi1_tx;
 extern DMA_HandleTypeDef hdma_usart1_rx;
 extern DMA_HandleTypeDef hdma_usart1_tx;
-extern DMA_HandleTypeDef hdma_usart2_rx;
-extern DMA_HandleTypeDef hdma_usart2_tx;
 extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
 extern TIM_HandleTypeDef htim1;
@@ -73,7 +72,6 @@ extern TIM_HandleTypeDef htim1;
 /* USER CODE BEGIN EV */
 // UART硬件中断接收缓冲区（25字节，通过IDLE中断+DMA接收变长数据）
 uint8_t HardInt_receive_str[25];
-uint8_t HardInt_receive2_str[25];
 
 /* USER CODE END EV */
 
@@ -258,21 +256,39 @@ void USART1_IRQHandler(void)
 
 /**
   * @brief  USART2全局中断处理函数
-  *         使用UART IDLE空闲中断检测一帧数据接收完成
-  *         检测到IDLE标志后发送事件标志通知HardIntEvent任务处理接收数据
+  *         字节中断接收MKS_142健康模块88字节帧数据
+  *         帧格式: [0]=0xFF帧头, [1..64]=PPG波形, [65]=心率, [66]=血氧, [68]=疲劳, ...
   */
 void USART2_IRQHandler(void)
 {
   /* USER CODE BEGIN USART2_IRQn 0 */
-  if(__HAL_UART_GET_FLAG(&huart2,UART_FLAG_IDLE)!=RESET)
+  static uint8_t mks142_rx_flag = 0;
+  static uint8_t mks142_rx_idx = 0;
+
+  if(__HAL_UART_GET_FLAG(&huart2, UART_FLAG_RXNE) != RESET)
   {
-    if(HardIntEventHandle != NULL)
+    uint8_t res = (uint8_t)(huart2.Instance->DR & 0xFF);
+
+    if(res == 0xFF)
     {
-      osEventFlagsSet(HardIntEventHandle, HARDINT_EVENT_UART2);
+      mks142_rx_flag = 1;
+      mks142_rx_idx = 0;
     }
-    __HAL_UART_CLEAR_FLAG(&huart2,UART_FLAG_IDLE);
-    HAL_UART_DMAStop(&huart2);
-    HAL_UART_Receive_DMA(&huart2, HardInt_receive2_str, 25);
+    if(mks142_rx_flag)
+    {
+      mks142_frame_buf[mks142_rx_idx] = res;
+      mks142_rx_idx++;
+      if(mks142_rx_idx >= MKS142_FRAME_LEN)
+      {
+        mks142_rx_flag = 0;
+        mks142_rx_idx = 0;
+        MKS142_ParseFrame(mks142_frame_buf);
+        if(HardIntEventHandle != NULL)
+        {
+          osEventFlagsSet(HardIntEventHandle, HARDINT_EVENT_UART2);
+        }
+      }
+    }
   }
   /* USER CODE END USART2_IRQn 0 */
   HAL_UART_IRQHandler(&huart2);
@@ -330,36 +346,6 @@ void DMA2_Stream7_IRQHandler(void)
 }
 
 /* USER CODE BEGIN 1 */
-
-/**
-  * @brief  DMA1 Stream5全局中断处理函数
-  *         处理USART2_RX DMA接收中断
-  */
-void DMA1_Stream5_IRQHandler(void)
-{
-  /* USER CODE BEGIN DMA1_Stream5_IRQn 0 */
-
-  /* USER CODE END DMA1_Stream5_IRQn 0 */
-  HAL_DMA_IRQHandler(&hdma_usart2_rx);
-  /* USER CODE BEGIN DMA1_Stream5_IRQn 1 */
-
-  /* USER CODE END DMA1_Stream5_IRQn 1 */
-}
-
-/**
-  * @brief  DMA1 Stream6全局中断处理函数
-  *         处理USART2_TX DMA发送中断
-  */
-void DMA1_Stream6_IRQHandler(void)
-{
-  /* USER CODE BEGIN DMA1_Stream6_IRQn 0 */
-
-  /* USER CODE END DMA1_Stream6_IRQn 0 */
-  HAL_DMA_IRQHandler(&hdma_usart2_tx);
-  /* USER CODE BEGIN DMA1_Stream6_IRQn 1 */
-
-  /* USER CODE END DMA1_Stream6_IRQn 1 */
-}
 
 /**
   * @brief  EXTI0外部中断处理函数

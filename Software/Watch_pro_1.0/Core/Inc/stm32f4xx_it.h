@@ -45,7 +45,6 @@
 /* USER CODE BEGIN EM */
 // UART硬件中断接收缓冲区（25字节），在其他模块中可extern引用
 extern uint8_t HardInt_receive_str[25];
-extern uint8_t HardInt_receive2_str[25];
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
@@ -60,9 +59,7 @@ void DebugMon_Handler(void);                 // 调试监视器
 void RTC_WKUP_IRQHandler(void);              // RTC唤醒定时器中断
 void TIM1_UP_TIM10_IRQHandler(void);         // TIM1更新中断（HAL时基 + KEY1长按检测）
 void USART1_IRQHandler(void);                // USART1全局中断（IDLE空闲中断+DMA接收）
-void USART2_IRQHandler(void);                // USART2全局中断（IDLE空闲中断+DMA接收）
-void DMA1_Stream5_IRQHandler(void);          // DMA1 Stream5中断（USART2_RX）
-void DMA1_Stream6_IRQHandler(void);          // DMA1 Stream6中断（USART2_TX）
+void USART2_IRQHandler(void);                // USART2全局中断（MKS_142字节中断接收）
 void DMA2_Stream2_IRQHandler(void);          // DMA2 Stream2中断（SPI1_TX）
 void DMA2_Stream5_IRQHandler(void);          // DMA2 Stream5中断（USART1_RX）
 void DMA2_Stream7_IRQHandler(void);          // DMA2 Stream7中断（USART1_TX）

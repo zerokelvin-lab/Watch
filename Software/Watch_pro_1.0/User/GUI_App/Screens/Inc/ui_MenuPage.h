@@ -23,6 +23,8 @@ extern "C" {
 #define GAME_PAGE_EN            0 // 游戏页面使能
 #define SET_PAGE_EN				1 // 设置页面使能
 #define ABOUT_PAGE_EN			1 // 关于页面使能
+#define MKS142_PAGE_EN			1 // MKS_142健康监测页面使能
+#define MKS142_DETAIL_PAGE_EN	1 // MKS_142健康详情页面使能
 
 extern lv_obj_t * ui_MenuPage; // 菜单页面对象
 
@@ -91,6 +93,18 @@ extern lv_obj_t * ui_MenuAbPanel;
 extern lv_obj_t * ui_MenuAbButton;
 extern lv_obj_t * ui_MenuAbicon;
 extern lv_obj_t * ui_MenuAbLabel;
+
+// MKS_142健康监测按钮
+extern lv_obj_t * ui_MenuMKS142Panel;
+extern lv_obj_t * ui_MenuMKS142Button;
+extern lv_obj_t * ui_MenuMKS142icon;
+extern lv_obj_t * ui_MenuMKS142Label;
+
+// MKS_142健康详情按钮
+extern lv_obj_t * ui_MenuMKS142DetailPanel;
+extern lv_obj_t * ui_MenuMKS142DetailButton;
+extern lv_obj_t * ui_MenuMKS142Detailicon;
+extern lv_obj_t * ui_MenuMKS142DetailLabel;
 
 extern int16_t ui_MenuScrollY; // 菜单滚动Y轴偏移
 

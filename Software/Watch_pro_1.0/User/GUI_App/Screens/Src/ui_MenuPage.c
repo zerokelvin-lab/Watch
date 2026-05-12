@@ -17,6 +17,8 @@
 #include "../Inc/ui_GameSelectPage.h"
 #include "../Inc/ui_SetPage.h"
 #include "../Inc/ui_AboutPage.h"
+#include "../Inc/ui_MKS142Page.h"
+#include "../Inc/ui_MKS142DetailPage.h"
 
 
 /* ====== 页面管理器 ====== */
@@ -96,6 +98,18 @@ lv_obj_t * ui_MenuAbPanel;
 lv_obj_t * ui_MenuAbButton;
 lv_obj_t * ui_MenuAbicon;
 lv_obj_t * ui_MenuAbLabel;
+
+// MKS_142健康监测入口
+lv_obj_t * ui_MenuMKS142Panel;
+lv_obj_t * ui_MenuMKS142Button;
+lv_obj_t * ui_MenuMKS142icon;
+lv_obj_t * ui_MenuMKS142Label;
+
+// MKS_142健康详情入口
+lv_obj_t * ui_MenuMKS142DetailPanel;
+lv_obj_t * ui_MenuMKS142DetailButton;
+lv_obj_t * ui_MenuMKS142Detailicon;
+lv_obj_t * ui_MenuMKS142DetailLabel;
 
 // 滚动位置记录
 int16_t ui_MenuScrollY = 0; // 菜单Y轴滚动偏移
@@ -339,6 +353,42 @@ void ui_event_MenuAbPanel(lv_event_t * e)
     {
         #if ABOUT_PAGE_EN
             Page_Load(&Page_About);
+        #else
+
+
+        #endif
+    }
+}
+
+/**
+ * @brief  MKS_142健康监测入口点击 - 跳转健康页面
+ */
+void ui_event_MenuMKS142Panel(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED)
+    {
+        #if MKS142_PAGE_EN
+            Page_Load(&Page_MKS142);
+        #else
+
+
+        #endif
+    }
+}
+
+/**
+ * @brief  MKS_142健康详情入口点击 - 跳转健康详情页面
+ */
+void ui_event_MenuMKS142DetailPanel(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED)
+    {
+        #if MKS142_DETAIL_PAGE_EN
+            Page_Load(&Page_MKS142Detail);
         #else
 
 
@@ -860,6 +910,90 @@ void ui_MenuPage_screen_init(void)
     lv_label_set_text(ui_MenuAbLabel, "\xE5\x85\xB3 \xE4\xBA\x8E"); // 关于
     lv_obj_set_style_text_font(ui_MenuAbLabel, &ui_font_Cuyuan20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    /* ====== 13. MKS_142健康监测入口 ====== */
+    ui_MenuMKS142Panel = lv_obj_create(ui_MenuPage);
+    lv_obj_set_width(ui_MenuMKS142Panel, 240);
+    lv_obj_set_height(ui_MenuMKS142Panel, 70);
+    lv_obj_set_x(ui_MenuMKS142Panel, 0);
+    lv_obj_set_y(ui_MenuMKS142Panel, 840);
+    lv_obj_set_align(ui_MenuMKS142Panel, LV_ALIGN_TOP_MID);
+    lv_obj_clear_flag(ui_MenuMKS142Panel, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_radius(ui_MenuMKS142Panel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_MenuMKS142Panel, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_MenuMKS142Panel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(ui_MenuMKS142Panel, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui_MenuMKS142Panel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_MenuMKS142Panel, lv_color_hex(0x808080), LV_PART_MAIN | LV_STATE_PRESSED);
+    lv_obj_set_style_bg_opa(ui_MenuMKS142Panel, 100, LV_PART_MAIN | LV_STATE_PRESSED);
+
+    ui_MenuMKS142Button = lv_btn_create(ui_MenuMKS142Panel);
+    lv_obj_set_width(ui_MenuMKS142Button, 40);
+    lv_obj_set_height(ui_MenuMKS142Button, 40);
+    lv_obj_set_align(ui_MenuMKS142Button, LV_ALIGN_LEFT_MID);
+    lv_obj_add_flag(ui_MenuMKS142Button, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_MenuMKS142Button, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_radius(ui_MenuMKS142Button, 40, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_MenuMKS142Button, lv_color_hex(0xFF1919), LV_PART_MAIN | LV_STATE_DEFAULT); // 红色
+    lv_obj_set_style_bg_opa(ui_MenuMKS142Button, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_MenuMKS142icon = lv_label_create(ui_MenuMKS142Button);
+    lv_obj_set_width(ui_MenuMKS142icon, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_MenuMKS142icon, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_MenuMKS142icon, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_MenuMKS142icon, "\xEE\x9D\xA2"); // 心率图标
+    lv_obj_set_style_text_font(ui_MenuMKS142icon, &ui_font_iconfont34, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_MenuMKS142Label = lv_label_create(ui_MenuMKS142Panel);
+    lv_obj_set_width(ui_MenuMKS142Label, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_MenuMKS142Label, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_MenuMKS142Label, 60);
+    lv_obj_set_y(ui_MenuMKS142Label, 0);
+    lv_obj_set_align(ui_MenuMKS142Label, LV_ALIGN_LEFT_MID);
+    lv_label_set_text(ui_MenuMKS142Label, "\xE5\x81\xA5 \xE5\xBA\xB7"); // 健康
+    lv_obj_set_style_text_font(ui_MenuMKS142Label, &ui_font_Cuyuan20, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    /* ====== 14. MKS_142健康详情入口 ====== */
+    ui_MenuMKS142DetailPanel = lv_obj_create(ui_MenuPage);
+    lv_obj_set_width(ui_MenuMKS142DetailPanel, 240);
+    lv_obj_set_height(ui_MenuMKS142DetailPanel, 70);
+    lv_obj_set_x(ui_MenuMKS142DetailPanel, 0);
+    lv_obj_set_y(ui_MenuMKS142DetailPanel, 910);
+    lv_obj_set_align(ui_MenuMKS142DetailPanel, LV_ALIGN_TOP_MID);
+    lv_obj_clear_flag(ui_MenuMKS142DetailPanel, LV_OBJ_FLAG_SCROLLABLE);
+    lv_obj_set_style_radius(ui_MenuMKS142DetailPanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_MenuMKS142DetailPanel, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_MenuMKS142DetailPanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_color(ui_MenuMKS142DetailPanel, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_border_opa(ui_MenuMKS142DetailPanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_MenuMKS142DetailPanel, lv_color_hex(0x808080), LV_PART_MAIN | LV_STATE_PRESSED);
+    lv_obj_set_style_bg_opa(ui_MenuMKS142DetailPanel, 100, LV_PART_MAIN | LV_STATE_PRESSED);
+
+    ui_MenuMKS142DetailButton = lv_btn_create(ui_MenuMKS142DetailPanel);
+    lv_obj_set_width(ui_MenuMKS142DetailButton, 40);
+    lv_obj_set_height(ui_MenuMKS142DetailButton, 40);
+    lv_obj_set_align(ui_MenuMKS142DetailButton, LV_ALIGN_LEFT_MID);
+    lv_obj_add_flag(ui_MenuMKS142DetailButton, LV_OBJ_FLAG_SCROLL_ON_FOCUS);
+    lv_obj_clear_flag(ui_MenuMKS142DetailButton, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);
+    lv_obj_set_style_radius(ui_MenuMKS142DetailButton, 40, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_MenuMKS142DetailButton, lv_color_hex(0x0080FF), LV_PART_MAIN | LV_STATE_DEFAULT); // 蓝色
+    lv_obj_set_style_bg_opa(ui_MenuMKS142DetailButton, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_MenuMKS142Detailicon = lv_label_create(ui_MenuMKS142DetailButton);
+    lv_obj_set_width(ui_MenuMKS142Detailicon, LV_SIZE_CONTENT);
+    lv_obj_set_height(ui_MenuMKS142Detailicon, LV_SIZE_CONTENT);
+    lv_obj_set_align(ui_MenuMKS142Detailicon, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_MenuMKS142Detailicon, "\xEE\x99\x92"); // 血氧图标作为详情标识
+    lv_obj_set_style_text_font(ui_MenuMKS142Detailicon, &ui_font_iconfont34, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_MenuMKS142DetailLabel = lv_label_create(ui_MenuMKS142DetailPanel);
+    lv_obj_set_width(ui_MenuMKS142DetailLabel, LV_SIZE_CONTENT);
+    lv_obj_set_height(ui_MenuMKS142DetailLabel, LV_SIZE_CONTENT);
+    lv_obj_set_x(ui_MenuMKS142DetailLabel, 60);
+    lv_obj_set_y(ui_MenuMKS142DetailLabel, 0);
+    lv_obj_set_align(ui_MenuMKS142DetailLabel, LV_ALIGN_LEFT_MID);
+    lv_label_set_text(ui_MenuMKS142DetailLabel, "\xE5\x81\xA5\xE5\xBA\xB7\xE8\xAF\xA6\xE6\x83\x85"); // 健康详情
+    lv_obj_set_style_text_font(ui_MenuMKS142DetailLabel, &ui_font_Cuyuan20, LV_PART_MAIN | LV_STATE_DEFAULT);
+
     // 恢复到之前记录的滚动位置
 	lv_obj_scroll_to(ui_MenuPage,0,ui_MenuScrollY,LV_ANIM_OFF);
 
@@ -877,6 +1011,8 @@ void ui_MenuPage_screen_init(void)
 	lv_obj_add_event_cb(ui_MenuGamePanel, ui_event_MenuGamePanel, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui_MenuSetPanel, ui_event_MenuSetPanel, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui_MenuAbPanel, ui_event_MenuAbPanel, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui_MenuMKS142Panel, ui_event_MenuMKS142Panel, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui_MenuMKS142DetailPanel, ui_event_MenuMKS142DetailPanel, LV_EVENT_ALL, NULL);
 
 
 }

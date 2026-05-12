@@ -340,7 +340,7 @@
               <MiscControls>--locale=english</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F411xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../SYSTEM;../BSP/LCD;../BSP/AHT21;../BSP/BL24C02;../BSP/IIC;../BSP/LSM303DLH;../BSP/MPU6050;../BSP/OWDG;../BSP/POWER;../BSP/SPL06_001;../BSP/EM7028;../BSP/TOUCH;../BSP/KEY;../BSP/KT6328;../Middlewares/LVGL/GUI;../Middlewares/LVGL/GUI/lvgl/src;../Middlewares/LVGL/GUI/lvgl;../Middlewares/LVGL/GUI/porting;../BSP/MPU6050/eMPL;..\User;..\User\GUI_App\Screens\Inc;..\User\Tasks\Inc;..\User\Func\Inc;..\User\GUI_App</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../SYSTEM;../BSP/LCD;../BSP/AHT21;../BSP/BL24C02;../BSP/IIC;../BSP/LSM303DLH;../BSP/MPU6050;../BSP/OWDG;../BSP/POWER;../BSP/SPL06_001;../BSP/EM7028;../BSP/TOUCH;../BSP/KEY;../BSP/KT6328;../BSP/MKS_142;../Middlewares/LVGL/GUI;../Middlewares/LVGL/GUI/lvgl/src;../Middlewares/LVGL/GUI/lvgl;../Middlewares/LVGL/GUI/porting;../BSP/MPU6050/eMPL;..\User;..\User\GUI_App\Screens\Inc;..\User\Tasks\Inc;..\User\Func\Inc;..\User\GUI_App</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -715,6 +715,16 @@
               <FileName>ui_HRPage.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\GUI_App\Screens\Src\ui_HRPage.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_MKS142Page.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\GUI_App\Screens\Src\ui_MKS142Page.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_MKS142DetailPage.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\GUI_App\Screens\Src\ui_MKS142DetailPage.c</FilePath>
             </File>
             <File>
               <FileName>ui_Megboxes.c</FileName>
@@ -1111,6 +1121,11 @@
               <FileName>DataSave.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BSP\BL24C02\DataSave.c</FilePath>
+            </File>
+            <File>
+              <FileName>mks_142.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\MKS_142\mks_142.c</FilePath>
             </File>
           </Files>
         </Group>

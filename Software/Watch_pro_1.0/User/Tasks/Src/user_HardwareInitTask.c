@@ -17,6 +17,9 @@
 #include "HWDataAccess.h"
 #include "version.h"
 
+// bsp mks_142
+#include "mks_142.h"
+
 // bsp
 #include "key.h"
 #include "lcd.h"
@@ -54,6 +57,10 @@ void HardwareInitTask(void *argument)
 	{
     vTaskSuspendAll();  // 挂起所有任务，确保初始化过程不被其他任务打断
 
+    // MKS_142健康模块初始化
+    MKS142_Init();
+    MKS142_StopMeasure();  // 上电先发送0x88停止（参考示例工程）
+
     // RTC Wake  // RTC唤醒定时器
     if(HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 2000, RTC_WAKEUPCLOCK_RTCCLK_DIV16) != HAL_OK)
     {
@@ -62,10 +69,6 @@ void HardwareInitTask(void *argument)
     // usart start  // 启动串口DMA接收
     HAL_UART_Receive_DMA(&huart1,(uint8_t*)HardInt_receive_str,25);
     __HAL_UART_ENABLE_IT(&huart1,UART_IT_IDLE);  // 使能串口空闲中断
-
-    // usart2 start  // 启动UART2 DMA接收
-    HAL_UART_Receive_DMA(&huart2,(uint8_t*)HardInt_receive2_str,25);
-    __HAL_UART_ENABLE_IT(&huart2,UART_IT_IDLE);
 
     // PWM Start  // 启动PWM（用于背光控制）
     HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_3);

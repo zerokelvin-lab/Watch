@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xxd -l 512 \"F:/file/模块资料/MKS_142模块相关资料/上位机/V2版 - 20220812\\(3\\).exe\")",
+      "Bash(xxd -l 1024 \"F:/file/模块资料/MKS_142模块相关资料/上位机/V2版 - 20220812\\(3\\).exe\")",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Program Files \\(x86\\)/**)",
+      "Read(//c/Users/**)",
+      "Bash(dotnet tool *)",
+      "Bash(dotnet *)",
+      "Bash(/c/Program Files/dotnet/dotnet *)",
+      "Bash(python3 -c \"import clr; print\\('pythonnet available'\\)\")",
+      "Bash(python3 -c \"import subprocess; subprocess.run\\(['pip', 'install', 'pythonnet'], capture_output=True\\); import clr; print\\('installed pythonnet'\\)\")"
+    ]
+  }
+}

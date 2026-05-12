@@ -172,7 +172,7 @@ void StartDefaultTask(void *argument)
   {
 		// 翻转PC13引脚（板载LED），指示系统正在运行
 		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
-    printf("test");
+    //printf("test");
     // 延时500ms
     osDelay(500);
   }

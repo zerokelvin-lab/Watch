@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Read(//c/Users/zerokelvin/Desktop/OV-Watch/Software/Watch_pro_1.0/**)"
+      "Read(//c/Users/zerokelvin/Desktop/OV-Watch/Software/Watch_pro_1.0/**)",
+      "Bash(ls -la \"c:/Users/zerokelvin/Desktop/OV-Watch/\" 2>/dev/null)",
+      "Read(//c/Users/zerokelvin/Desktop/OV-Watch/**)"
     ],
     "additionalDirectories": [
       "c:\\Users\\zerokelvin\\Desktop\\OV-Watch\\Software\\Watch_pro_1.0\\BSP\\POWER",
@@ -10,7 +12,9 @@
       "c:\\Users\\zerokelvin\\Desktop\\OV-Watch\\Software\\Watch_pro_1.0\\Core\\Inc",
       "c:\\Users\\zerokelvin\\Desktop\\OV-Watch\\Software\\Watch_pro_1.0\\BSP\\KEY",
       "c:\\Users\\zerokelvin\\Desktop\\OV-Watch\\Software\\Watch_pro_1.0\\User\\Tasks\\Src",
-      "c:\\Users\\zerokelvin\\Desktop\\OV-Watch\\Software\\Watch_pro_1.0\\User\\Tasks\\Inc"
+      "c:\\Users\\zerokelvin\\Desktop\\OV-Watch\\Software\\Watch_pro_1.0\\User\\Tasks\\Inc",
+      "c:\\Users\\zerokelvin\\Desktop\\OV-Watch\\Software\\Watch_pro_1.0\\User\\GUI_App\\Screens\\Src",
+      "c:\\Users\\zerokelvin\\Desktop\\OV-Watch\\Software\\Watch_pro_1.0\\BSP\\MKS_142"
     ]
   }
 }
