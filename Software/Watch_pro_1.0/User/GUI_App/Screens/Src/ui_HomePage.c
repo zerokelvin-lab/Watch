@@ -5,7 +5,7 @@
 #include "../../ui_helpers.h"
 #include "../Inc/ui_HomePage.h"
 #include "../Inc/ui_MenuPage.h"
-#include "../Inc/ui_HRPage.h"
+#include "../Inc/ui_MKS142Page.h"
 #include "../Inc/ui_SetPage.h"
 
 #include "../../../Func/Inc/HWDataAccess.h"
@@ -156,6 +156,20 @@ static void HomePage_timer_cb(lv_timer_t * timer)
         lv_arc_set_value(ui_HumiArc, ui_HomePageHumiValue);
 				sprintf(value_strbuf,"%d",ui_HomePageHumiValue);
 				lv_label_set_text(ui_HumiNumLabel, value_strbuf);
+      }
+
+      /* 心率动态更新（来自MKS142后台测量） */
+      {
+        static uint8_t last_hr = 0;
+        if(last_hr != MKS142_saved_hr)
+        {
+          last_hr = MKS142_saved_hr;
+          if(last_hr > 0)
+            sprintf(value_strbuf,"%d", last_hr);
+          else
+            sprintf(value_strbuf,"--");
+          lv_label_set_text(ui_HRNumLabel, value_strbuf);
+        }
       }
 
 	}
@@ -570,7 +584,7 @@ void ui_HomePage_screen_init(void)
     lv_obj_set_x(ui_HRNumLabel, 70);
     lv_obj_set_y(ui_HRNumLabel, 125);
     lv_obj_set_align(ui_HRNumLabel, LV_ALIGN_CENTER);
-    sprintf(value_strbuf,"%d", HWInterface.HR_meter.HrRate);
+    sprintf(value_strbuf,"%d", MKS142_saved_hr > 0 ? MKS142_saved_hr : 0);
     lv_label_set_text(ui_HRNumLabel, value_strbuf);
 
     /* ====== 下拉快捷面板 ====== */

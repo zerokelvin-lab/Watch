@@ -30,8 +30,8 @@ lv_obj_t * ui_MKS142NoticeLabel;
 lv_timer_t * ui_MKS142PageTimer;
 
 /* ====== 历史数据保存（静态，跨页面生命周期保留） ====== */
-static uint8_t saved_hr = 0;
-static uint8_t saved_spo2 = 0;
+uint8_t MKS142_saved_hr = 0;
+uint8_t MKS142_saved_spo2 = 0;
 static uint32_t saved_seconds_ago = 0;
 static uint8_t has_saved_data = 0;
 static uint8_t is_measuring = 0;       // 当前是否在测量
@@ -106,15 +106,15 @@ static void MKS142Page_timer_cb(lv_timer_t * timer)
                 stable_count = 0;
 
             /* 保存并显示当前值 */
-            saved_hr = cur_hr;
-            saved_spo2 = cur_spo2;
+            MKS142_saved_hr = cur_hr;
+            MKS142_saved_spo2 = cur_spo2;
             saved_seconds_ago = 0;
             has_saved_data = 1;
 
-            sprintf(strbuf, "%d", saved_hr);
+            sprintf(strbuf, "%d", MKS142_saved_hr);
             lv_label_set_text(ui_MKS142HRNum, strbuf);
 
-            sprintf(strbuf, "%d%%", saved_spo2);
+            sprintf(strbuf, "%d%%", MKS142_saved_spo2);
             lv_label_set_text(ui_MKS142SpO2Num, strbuf);
 
             /* 连续稳定达到阈值，自动停止 */
@@ -138,10 +138,10 @@ static void MKS142Page_timer_cb(lv_timer_t * timer)
             if(has_saved_data)
             {
                 /* 显示历史数据 */
-                sprintf(strbuf, "%d", saved_hr);
+                sprintf(strbuf, "%d", MKS142_saved_hr);
                 lv_label_set_text(ui_MKS142HRNum, strbuf);
 
-                sprintf(strbuf, "%d%%", saved_spo2);
+                sprintf(strbuf, "%d%%", MKS142_saved_spo2);
                 lv_label_set_text(ui_MKS142SpO2Num, strbuf);
 
                 uint32_t min = saved_seconds_ago / 60;
@@ -264,9 +264,9 @@ void ui_MKS142Page_screen_init(void)
     if(has_saved_data)
     {
         uint8_t strbuf[16];
-        sprintf(strbuf, "%d", saved_hr);
+        sprintf(strbuf, "%d", MKS142_saved_hr);
         lv_label_set_text(ui_MKS142HRNum, strbuf);
-        sprintf(strbuf, "%d%%", saved_spo2);
+        sprintf(strbuf, "%d%%", MKS142_saved_spo2);
         lv_label_set_text(ui_MKS142SpO2Num, strbuf);
     }
 

@@ -17,8 +17,7 @@
 
 #include "ui.h"
 #include "ui_EnvPage.h"
-#include "ui_HRPage.h"
-#include "ui_SPO2Page.h"
+#include "ui_MKS142Page.h"
 #include "ui_HomePage.h"
 #include "ui_DateTimeSetPage.h"
 
@@ -123,8 +122,8 @@ void MessageSendTask(void *argument)
 				HAL_RTC_GetDate(&hrtc,&BLEMessage.nowdate,RTC_FORMAT_BIN);   // 获取当前日期
 				BLEMessage.humi = HWInterface.AHT21.humidity;     // 湿度
 				BLEMessage.temp = HWInterface.AHT21.temperature;  // 温度
-				BLEMessage.HR = HWInterface.HR_meter.HrRate;      // 心率
-				BLEMessage.SPO2 = HWInterface.HR_meter.SPO2;      // 血氧
+				BLEMessage.HR = MKS142_saved_hr;      // 心率
+				BLEMessage.SPO2 = MKS142_saved_spo2;      // 血氧
 				BLEMessage.stepNum = HWInterface.IMU.Steps;       // 步数
 
 				printf("data:%2d-%02d\r\n",BLEMessage.nowdate.Month,BLEMessage.nowdate.Date);

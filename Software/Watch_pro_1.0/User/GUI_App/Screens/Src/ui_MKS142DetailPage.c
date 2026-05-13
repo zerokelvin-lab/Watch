@@ -28,12 +28,12 @@ lv_obj_t * ui_MKS142DetailNoticeLabel;
 lv_timer_t * ui_MKS142DetailPageTimer;
 
 /* ====== 历史数据保存（静态，跨页面生命周期保留） ====== */
-static uint8_t saved_fatigue = 0;
-static uint8_t saved_micro = 0;
-static uint8_t saved_resp = 0;
-static uint8_t saved_sbp = 0;
-static uint8_t saved_dbp = 0;
-static uint8_t saved_rmssd = 0;
+uint8_t MKS142_saved_fatigue = 0;
+uint8_t MKS142_saved_micro = 0;
+uint8_t MKS142_saved_resp = 0;
+uint8_t MKS142_saved_sbp = 0;
+uint8_t MKS142_saved_dbp = 0;
+uint8_t MKS142_saved_rmssd = 0;
 static uint32_t saved_seconds_ago = 0;
 static uint8_t has_saved_data = 0;
 static uint8_t is_measuring = 0;
@@ -71,19 +71,19 @@ static void update_display(void)
 {
     uint8_t strbuf[16];
 
-    sprintf(strbuf, "%d", saved_fatigue);
+    sprintf(strbuf, "%d", MKS142_saved_fatigue);
     lv_label_set_text(ui_MKS142DetailFatigueNum, strbuf);
 
-    sprintf(strbuf, "%d", saved_micro);
+    sprintf(strbuf, "%d", MKS142_saved_micro);
     lv_label_set_text(ui_MKS142DetailMicroNum, strbuf);
 
-    sprintf(strbuf, "%d", saved_resp);
+    sprintf(strbuf, "%d", MKS142_saved_resp);
     lv_label_set_text(ui_MKS142DetailRespNum, strbuf);
 
-    sprintf(strbuf, "%d/%d", saved_sbp, saved_dbp);
+    sprintf(strbuf, "%d/%d", MKS142_saved_sbp, MKS142_saved_dbp);
     lv_label_set_text(ui_MKS142DetailBPNum, strbuf);
 
-    sprintf(strbuf, "%dms", saved_rmssd);
+    sprintf(strbuf, "%dms", MKS142_saved_rmssd);
     lv_label_set_text(ui_MKS142DetailRMSSDNum, strbuf);
 }
 
@@ -145,9 +145,9 @@ static void MKS142DetailPage_timer_cb(lv_timer_t * timer)
         else       stable_count = 0;
 
         /* 保存并显示当前值 */
-        saved_fatigue = cur_fatigue; saved_micro = cur_micro;
-        saved_resp = cur_resp; saved_sbp = cur_sbp;
-        saved_dbp = cur_dbp; saved_rmssd = cur_rmssd;
+        MKS142_saved_fatigue = cur_fatigue; MKS142_saved_micro = cur_micro;
+        MKS142_saved_resp = cur_resp; MKS142_saved_sbp = cur_sbp;
+        MKS142_saved_dbp = cur_dbp; MKS142_saved_rmssd = cur_rmssd;
         saved_seconds_ago = 0;
         has_saved_data = 1;
 

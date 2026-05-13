@@ -19,6 +19,9 @@ extern lv_obj_t * ui_MKS142SpO2Unit;      // 血氧单位
 extern lv_obj_t * ui_MKS142SpO2Icon;      // 血氧图标
 extern lv_obj_t * ui_MKS142NoticeLabel;   // 状态提示
 
+extern uint8_t MKS142_saved_hr;   // 保存的心率数据
+extern uint8_t MKS142_saved_spo2; // 保存的血氧数据
+
 extern Page_t Page_MKS142; // 健康页面管理器
 
 void ui_MKS142Page_screen_init(void);   // 健康页面初始化

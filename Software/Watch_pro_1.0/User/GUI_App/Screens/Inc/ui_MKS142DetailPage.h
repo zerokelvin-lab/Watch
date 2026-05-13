@@ -18,6 +18,13 @@ extern lv_obj_t * ui_MKS142DetailBPNum;      // 血压数字
 extern lv_obj_t * ui_MKS142DetailRMSSDNum;   // RMSSD数字
 extern lv_obj_t * ui_MKS142DetailNoticeLabel;// 状态提示
 
+extern uint8_t MKS142_saved_fatigue; // 保存的疲劳度
+extern uint8_t MKS142_saved_micro;   // 保存的微循环
+extern uint8_t MKS142_saved_resp;    // 保存的呼吸率
+extern uint8_t MKS142_saved_sbp;     // 保存的收缩压
+extern uint8_t MKS142_saved_dbp;     // 保存的舒张压
+extern uint8_t MKS142_saved_rmssd;   // 保存的RMSSD
+
 extern Page_t Page_MKS142Detail; // 详情页面管理器
 
 void ui_MKS142DetailPage_screen_init(void);   // 详情页面初始化

@@ -23,6 +23,7 @@
 #include "user_ChargCheckTask.h"
 #include "user_MessageSendTask.h"
 #include "user_DataSaveTask.h"
+#include "user_MKS142AutoTask.h"
 
 /* Private typedef -----------------------------------------------------------*/
 
@@ -138,6 +139,14 @@ const osThreadAttr_t DataSaveTask_attributes = {
   .priority = (osPriority_t) osPriorityLow2,
 };
 
+//MKS142AutoMeasureTask  // MKS142后台自动测量任务
+osThreadId_t MKS142AutoTaskHandle;
+const osThreadAttr_t MKS142AutoTask_attributes = {
+  .name = "MKS142AutoTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow2,
+};
+
 
 /* Message queues ------------------------------------------------------------*/
 //Key message  // 按键消息队列
@@ -198,6 +207,7 @@ void User_Tasks_Init(void)
   MessageSendTaskHandle = osThreadNew(MessageSendTask, NULL, &MessageSendTask_attributes);
 	MPUCheckTaskHandle		= osThreadNew(MPUCheckTask, NULL, &MPUCheckTask_attributes);
 	DataSaveTaskHandle		= osThreadNew(DataSaveTask, NULL, &DataSaveTask_attributes);
+	MKS142AutoTaskHandle  = osThreadNew(MKS142AutoMeasureTask, NULL, &MKS142AutoTask_attributes);
 
   /* add events, ... */
 
