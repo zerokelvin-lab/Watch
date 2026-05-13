@@ -762,6 +762,11 @@
               <FilePath>..\User\GUI_App\Screens\Src\ui_SPO2Page.c</FilePath>
             </File>
             <File>
+              <FileName>ui_SOSPage.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\GUI_App\Screens\Src\ui_SOSPage.c</FilePath>
+            </File>
+            <File>
               <FileName>ui_TimerPage.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\GUI_App\Screens\Src\ui_TimerPage.c</FilePath>

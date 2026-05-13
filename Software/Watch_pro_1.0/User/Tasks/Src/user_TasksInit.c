@@ -25,6 +25,7 @@
 #include "user_DataSaveTask.h"
 #include "user_MKS142AutoTask.h"
 #include "fall_detect.h"
+#include "user_SosTask.h"
 
 /* Private typedef -----------------------------------------------------------*/
 
@@ -148,6 +149,14 @@ const osThreadAttr_t MKS142AutoTask_attributes = {
   .priority = (osPriority_t) osPriorityLow2,
 };
 
+//SOS Task  // SOS紧急告警任务
+osThreadId_t SOSTaskHandle;
+const osThreadAttr_t SOSTask_attributes = {
+  .name = "SOSTask",
+  .stack_size = 128 * 10,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+
 
 /* Message queues ------------------------------------------------------------*/
 //Key message  // 按键消息队列
@@ -209,6 +218,7 @@ void User_Tasks_Init(void)
 	MPUCheckTaskHandle		= osThreadNew(MPUCheckTask, NULL, &MPUCheckTask_attributes);
 	DataSaveTaskHandle		= osThreadNew(DataSaveTask, NULL, &DataSaveTask_attributes);
 	MKS142AutoTaskHandle  = osThreadNew(MKS142AutoMeasureTask, NULL, &MKS142AutoTask_attributes);
+	SOSTaskHandle         = osThreadNew(SOSTask, NULL, &SOSTask_attributes);
 
   /* add events, ... */
 

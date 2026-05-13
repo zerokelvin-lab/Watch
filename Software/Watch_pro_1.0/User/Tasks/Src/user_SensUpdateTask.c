@@ -25,6 +25,7 @@
 
 #include "HWDataAccess.h"
 #include "fall_detect.h"
+#include "user_SosTask.h"
 
 /* Private typedef -----------------------------------------------------------*/
 
@@ -85,6 +86,11 @@ void MPUCheckTask(void *argument)
 			}
 		}
 		FallDetect_Process();  // 跌倒检测（含滤波+状态机+debug输出）
+		if(FallDetect_GetState() == FALL_STATE_CONFIRMED)  // 跌倒确认
+		{
+			SOS_Trigger(SOS_TYPE_FALL);  // 触发SOS
+			FallDetect_Reset();  // 复位跌倒状态
+		}
 		osDelay(50);  // 50ms检测周期（需足够快捕捉撞击脉冲）
 	}
 }

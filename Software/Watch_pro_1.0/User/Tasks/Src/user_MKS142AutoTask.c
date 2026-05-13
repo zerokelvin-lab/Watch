@@ -8,6 +8,7 @@
 #include "PageManager.h"
 #include "ui_MKS142Page.h"
 #include "ui_MKS142DetailPage.h"
+#include "user_SosTask.h"
 #include <stdlib.h>
 
 #define AUTO_CHECK_TICKS     1000    /* 测量中每1秒检查一次 */
@@ -174,6 +175,17 @@ void MKS142AutoMeasureTask(void *argument)
                 /* 连续稳定达到阈值 → 停止测量 */
                 if(stable_count >= AUTO_STABLE_SECONDS)
                 {
+                    /* 检查健康指标异常 → 触发SOS */
+                    uint8_t sos_type = 0;
+                    if(cur_hr < 60 || cur_hr > 100)       sos_type |= SOS_TYPE_HR;
+                    if(cur_spo2 < 95)                      sos_type |= SOS_TYPE_SPO2;
+                    if(cur_micro < 70)                     sos_type |= SOS_TYPE_MICRO;
+                    if(cur_sbp < 90 || cur_sbp > 140 ||
+                       cur_dbp < 60 || cur_dbp > 90)       sos_type |= SOS_TYPE_BP;
+                    if(cur_rmssd < 22 || cur_rmssd > 120)  sos_type |= SOS_TYPE_HRV;
+                    if(cur_fatigue < 15)                   sos_type |= SOS_TYPE_FATIGUE;
+                    if(sos_type) SOS_Trigger(sos_type);
+
                     MKS142_StopMeasure();
                     break;
                 }
