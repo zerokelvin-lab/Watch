@@ -24,6 +24,7 @@
 #include "user_MessageSendTask.h"
 #include "user_DataSaveTask.h"
 #include "user_MKS142AutoTask.h"
+#include "fall_detect.h"
 
 /* Private typedef -----------------------------------------------------------*/
 
@@ -127,7 +128,7 @@ const osThreadAttr_t MessageSendTask_attributes = {
 osThreadId_t MPUCheckTaskHandle;
 const osThreadAttr_t MPUCheckTask_attributes = {
   .name = "MPUCheckTask",
-  .stack_size = 128 * 3,
+  .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow2,
 };
 
@@ -211,6 +212,8 @@ void User_Tasks_Init(void)
 
   /* add events, ... */
 
+  /* 跌倒检测初始化（使用默认阈值，debug默认开启） */
+  FallDetect_Init(NULL);
 
 	/* add  others ... */  // 发送首次首页数据更新
 	uint8_t HomeUpdataStr;

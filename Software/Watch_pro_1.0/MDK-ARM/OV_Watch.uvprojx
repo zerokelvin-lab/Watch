@@ -1083,6 +1083,11 @@
               <FilePath>..\BSP\MPU6050\mpu6050.c</FilePath>
             </File>
             <File>
+              <FileName>fall_detect.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\MPU6050\fall_detect.c</FilePath>
+            </File>
+            <File>
               <FileName>SPL06_001.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BSP\SPL06_001\SPL06_001.c</FilePath>

@@ -24,6 +24,7 @@
 #include "HrAlgorythm.h"
 
 #include "HWDataAccess.h"
+#include "fall_detect.h"
 
 /* Private typedef -----------------------------------------------------------*/
 
@@ -71,9 +72,10 @@ void MPUCheckTask(void *argument)
 				if(WRIST_UP == HWInterface.IMU.wrist_state)  // 从抬起变为放下
 				{
 					HWInterface.IMU.wrist_state = WRIST_DOWN;
-					if( Page_Get_NowPage()->page_obj == &ui_HomePage ||  // 在首页/菜单/设置页
+					if(FallDetect_GetState() == FALL_STATE_NORMAL &&  // 跌倒检测空闲时才休眠
+						( Page_Get_NowPage()->page_obj == &ui_HomePage ||  // 在首页/菜单/设置页
 						Page_Get_NowPage()->page_obj == &ui_MenuPage ||
-						Page_Get_NowPage()->page_obj == &ui_SetPage )
+						Page_Get_NowPage()->page_obj == &ui_SetPage ))
 					{
 						uint8_t Stopstr;
 						osMessageQueuePut(Stop_MessageQueue, &Stopstr, 0, 1);//sleep  // 进入休眠
@@ -82,7 +84,8 @@ void MPUCheckTask(void *argument)
 				HWInterface.IMU.wrist_state = WRIST_DOWN;
 			}
 		}
-		osDelay(300);  // 300ms检测周期
+		FallDetect_Process();  // 跌倒检测（含滤波+状态机+debug输出）
+		osDelay(50);  // 50ms检测周期（需足够快捕捉撞击脉冲）
 	}
 }
 
