@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\output\OV_Watch.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\output\OV_Watch.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri May 15 21:50:20 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri May 15 22:21:25 2026
 <BR><P>
 <H3>Maximum Stack Usage =       1024 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -685,7 +685,6 @@ Global Symbols
 <LI><a href="#[298]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Power_Pins_Init
 <LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IICInit
 <LI><a href="#[260]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GPIO_Init
-<LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Bus_Init
 <LI><a href="#[3b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_bg
 </UL>
 
@@ -1361,11 +1360,11 @@ Global Symbols
 <P><STRONG><a name="[1d7]"></a>FallDetect_Process</STRONG> (Thumb, 318 bytes, Stack size 56 bytes, fall_detect.o(i.FallDetect_Process))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = FallDetect_Process &rArr; MPU_Get_Angles &rArr; MPU_Get_Accelerometer &rArr; MPU_Read_Len &rArr; IICWaitAck &rArr; SDA_Output_Mode &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Get_Gyroscope
-<LI><a href="#[1d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Get_Accelerometer
-<LI><a href="#[1db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+<BR>[Calls]<UL><LI><a href="#[1db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[1dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iabs
+<LI><a href="#[1d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Get_Gyroscope
 <LI><a href="#[1da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Get_Angles
+<LI><a href="#[1d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Get_Accelerometer
 <LI><a href="#[1b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPUCheckTask
@@ -1536,7 +1535,6 @@ Global Symbols
 <LI><a href="#[298]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Power_Pins_Init
 <LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IICInit
 <LI><a href="#[260]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GPIO_Init
-<LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Bus_Init
 </UL>
 
 <P><STRONG><a name="[1b1]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_ReadPin))
@@ -1565,7 +1563,6 @@ Global Symbols
 <LI><a href="#[23a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KT6328_Disable
 <LI><a href="#[25c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WR_REG
 <LI><a href="#[260]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GPIO_Init
-<LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Bus_Init
 </UL>
 
 <P><STRONG><a name="[1db]"></a>HAL_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_hal.o(i.HAL_GetTick))
@@ -1574,6 +1571,7 @@ Global Symbols
 <LI><a href="#[1f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCCEx_PeriphCLKConfig
 <LI><a href="#[1f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
 <LI><a href="#[1f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
+<LI><a href="#[2a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitFlagStateUntilTimeout
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitCplt
 <LI><a href="#[1ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_EnterInitMode
 <LI><a href="#[205]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RTC_WaitForSynchro
@@ -1582,7 +1580,6 @@ Global Symbols
 <LI><a href="#[1e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_PollForConversion
 <LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
-<LI><a href="#[2a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitFlagStateUntilTimeout
 <LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_WaitOnFlagUntilTimeout
 </UL>
 
@@ -2404,7 +2401,6 @@ Global Symbols
 <LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IIC_Read_Multi_Byte
 <LI><a href="#[282]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Write_Len
 <LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Read_Len
-<LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Bus_Init
 </UL>
 
 <P><STRONG><a name="[182]"></a>IICWaitAck</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, iic_hal.o(i.IICWaitAck))
@@ -2872,33 +2868,24 @@ Global Symbols
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MKS142Page_timer_cb
 </UL>
 
-<P><STRONG><a name="[a0]"></a>MPUCheckTask</STRONG> (Thumb, 222 bytes, Stack size 48 bytes, user_sensupdatetask.o(i.MPUCheckTask))
-<BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = MPUCheckTask &rArr; FallDetect_Process &rArr; MPU_Get_Angles &rArr; MPU_Get_Accelerometer &rArr; MPU_Read_Len &rArr; IICWaitAck &rArr; SDA_Output_Mode &rArr; HAL_GPIO_Init
+<P><STRONG><a name="[a0]"></a>MPUCheckTask</STRONG> (Thumb, 130 bytes, Stack size 8 bytes, user_sensupdatetask.o(i.MPUCheckTask))
+<BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = MPUCheckTask &rArr; FallDetect_Process &rArr; MPU_Get_Angles &rArr; MPU_Get_Accelerometer &rArr; MPU_Read_Len &rArr; IICWaitAck &rArr; SDA_Output_Mode &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueuePut
-<LI><a href="#[1b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelGetTickCount
 <LI><a href="#[278]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SOS_Trigger
 <LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Page_Get_NowPage
 <LI><a href="#[27c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_isHorizontal
-<LI><a href="#[1d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Get_Gyroscope
-<LI><a href="#[1d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Get_Accelerometer
 <LI><a href="#[27e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FallDetect_Reset
 <LI><a href="#[1d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FallDetect_Process
 <LI><a href="#[27d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FallDetect_GetState
-<LI><a href="#[1b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> user_tasksinit.o(i.User_Tasks_Init)
 </UL>
-<P><STRONG><a name="[27f]"></a>MPU_Bus_Init</STRONG> (Thumb, 110 bytes, Stack size 40 bytes, mpu6050.o(i.MPU_Bus_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = MPU_Bus_Init &rArr; IICInit &rArr; HAL_GPIO_Init
+<P><STRONG><a name="[27f]"></a>MPU_Bus_Init</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, mpu6050.o(i.MPU_Bus_Init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = MPU_Bus_Init &rArr; IICInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[19c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
-<LI><a href="#[256]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
-<LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IICStop
-<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IICInit
-<LI><a href="#[19b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IICInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_dmp_init
 </UL>
@@ -2908,8 +2895,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Read_Len
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPUCheckTask
-<LI><a href="#[1d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FallDetect_Process
+<BR>[Called By]<UL><LI><a href="#[1d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FallDetect_Process
 <LI><a href="#[1da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Get_Angles
 </UL>
 
@@ -2929,8 +2915,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Read_Len
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPUCheckTask
-<LI><a href="#[1d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FallDetect_Process
+<BR>[Called By]<UL><LI><a href="#[1d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FallDetect_Process
 </UL>
 
 <P><STRONG><a name="[280]"></a>MPU_Read_Len</STRONG> (Thumb, 142 bytes, Stack size 24 bytes, mpu6050.o(i.MPU_Read_Len))
@@ -3618,8 +3603,7 @@ Global Symbols
 <P><STRONG><a name="[1b3]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf8.o(i.__0printf$8))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPUCheckTask
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CommTask
+<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CommTask
 <LI><a href="#[1d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FallDetect_Process
 <LI><a href="#[238]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enqueue
 <LI><a href="#[237]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dequeue
@@ -4369,7 +4353,6 @@ Global Symbols
 <LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IICSendAck
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IICReceiveByte
 <LI><a href="#[1a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IIC_Write_One_Byte
-<LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU_Bus_Init
 </UL>
 
 <P><STRONG><a name="[237]"></a>dequeue</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, user_queue.o(i.dequeue))
@@ -4505,8 +4488,8 @@ Global Symbols
 <P><STRONG><a name="[39c]"></a>dmp_set_tap_thresh</STRONG> (Thumb, 314 bytes, Stack size 32 bytes, inv_mpu_dmp_motion_driver.o(i.dmp_set_tap_thresh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = dmp_set_tap_thresh &rArr; mpu_write_mem &rArr; MPU_Write_Len &rArr; IICWaitAck &rArr; SDA_Output_Mode &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[398]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_write_mem
-<LI><a href="#[3a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_get_accel_fsr
+<BR>[Calls]<UL><LI><a href="#[3a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_get_accel_fsr
+<LI><a href="#[398]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_write_mem
 </UL>
 <BR>[Called By]<UL><LI><a href="#[39a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dmp_enable_feature
 </UL>
@@ -11288,8 +11271,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[639]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCountFromISR
 <LI><a href="#[63a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCount
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPUCheckTask
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CommTask
+<BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CommTask
 <LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyScan
 </UL>
 

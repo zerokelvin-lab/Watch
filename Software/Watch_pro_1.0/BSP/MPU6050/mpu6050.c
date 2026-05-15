@@ -73,22 +73,6 @@ void MPU_Bus_Init(void)
 {
 	CLK_ENABLE;                                    // 使能GPIOB时钟
 	IICInit(&MPU_bus);                             // 初始化I2C总线
-
-	/* I2C总线恢复：发送9个时钟脉冲解除SDA卡死（从机异常时SDA可能被拉低） */
-	GPIO_InitTypeDef GPIO_InitStructure = {0};
-	GPIO_InitStructure.Pin = MPU_bus.IIC_SCL_PIN;
-	GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
-	GPIO_InitStructure.Pull = GPIO_PULLUP;
-	GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
-	HAL_GPIO_Init(MPU_bus.IIC_SCL_PORT, &GPIO_InitStructure);
-	for(int i = 0; i < 9; i++)
-	{
-		HAL_GPIO_WritePin(MPU_bus.IIC_SCL_PORT, MPU_bus.IIC_SCL_PIN, GPIO_PIN_RESET);
-		delay_us(5);
-		HAL_GPIO_WritePin(MPU_bus.IIC_SCL_PORT, MPU_bus.IIC_SCL_PIN, GPIO_PIN_SET);
-		delay_us(5);
-	}
-	IICStop(&MPU_bus);                             // 发送STOP释放总线
 }
 
 /* ====== MPU6050 主初始化 ====== */

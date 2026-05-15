@@ -60,7 +60,6 @@ extern int em70xx_reset(int ref);
   */
 void MPUCheckTask(void *argument)
 {
-	uint32_t dbg_tick = 0;
 	while(1)
 	{
 		if(HWInterface.IMU.wrist_is_enabled)  // 抬手亮屏功能已启用
@@ -86,20 +85,6 @@ void MPUCheckTask(void *argument)
 				HWInterface.IMU.wrist_state = WRIST_DOWN;
 			}
 		}
-
-		/* 每2秒打印一次MPU6050调试信息 */
-		if(osKernelGetTickCount() - dbg_tick >= 2000)
-		{
-			dbg_tick = osKernelGetTickCount();
-			short ax, ay, az, gx, gy, gz;
-			int ret_a = MPU_Get_Accelerometer(&ax, &ay, &az);
-			MPU_Get_Gyroscope(&gx, &gy, &gz);
-			printf("[MPU] I2C_ret=%d acc=%d,%d,%d gyro=%d,%d,%d steps=%lu err=%d\r\n",
-			       ret_a, ax, ay, az, gx, gy, gz,
-			       (unsigned long)HWInterface.IMU.Steps,
-			       HWInterface.IMU.ConnectionError);
-		}
-
 		FallDetect_Process();  // 跌倒检测（含滤波+状态机+debug输出）
 		if(FallDetect_GetState() == FALL_STATE_CONFIRMED)  // 跌倒确认
 		{
