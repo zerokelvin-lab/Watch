@@ -1,5 +1,4 @@
 .\output\ui_font_cuyuan80.o: ..\User\GUI_App\Fonts\ui_font_Cuyuan80.c
-.\output\ui_font_cuyuan80.o: ..\User\GUI_App\Fonts\../ui.h
 .\output\ui_font_cuyuan80.o: ../Middlewares/LVGL/GUI/lvgl/lvgl.h
 .\output\ui_font_cuyuan80.o: ../Middlewares/LVGL/GUI/lvgl/src/misc/lv_log.h
 .\output\ui_font_cuyuan80.o: ../Middlewares/LVGL/GUI/lvgl/src/misc/../lv_conf_internal.h
@@ -123,6 +122,3 @@
 .\output\ui_font_cuyuan80.o: ../Middlewares/LVGL/GUI/lvgl/src/extra/libs/freetype/lv_freetype.h
 .\output\ui_font_cuyuan80.o: ../Middlewares/LVGL/GUI/lvgl/src/extra/libs/rlottie/lv_rlottie.h
 .\output\ui_font_cuyuan80.o: ../Middlewares/LVGL/GUI/lvgl/src/extra/libs/ffmpeg/lv_ffmpeg.h
-.\output\ui_font_cuyuan80.o: D:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdio.h
-.\output\ui_font_cuyuan80.o: ..\User\GUI_App\Fonts\../../Func/Inc/PageManager.h
-.\output\ui_font_cuyuan80.o: ..\User\GUI_App\Fonts\../../Func/Inc/../../GUI_App/ui.h

@@ -27,25 +27,13 @@ Project File Date:  05/13/2026
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin'
 Build target 'OV_Watch'
-compiling mpu6050.c...
-..\BSP\MPU6050\mpu6050.c(446): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  	if(roll<=0.50 && roll>=-0.50 && pitch<=0.50 && pitch>=-0.50)  // ??????????€??????0.5??????(?????28.6???)
-..\BSP\MPU6050\mpu6050.c(446): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  	if(roll<=0.50 && roll>=-0.50 && pitch<=0.50 && pitch>=-0.50)  // ??????????€??????0.5??????(?????28.6???)
-..\BSP\MPU6050\mpu6050.c: 2 warnings, 0 errors
-compiling user_SensUpdateTask.c...
-..\User\Tasks\Src\user_SensUpdateTask.c(106): warning:  #177-D: variable "dat"  was declared but never referenced
-  	uint16_t dat=0;
-..\User\Tasks\Src\user_SensUpdateTask.c(149): warning:  #177-D: variable "value_strbuf"  was declared but never referenced
-  			uint8_t value_strbuf[5];
-..\User\Tasks\Src\user_SensUpdateTask.c(140): warning:  #177-D: variable "value_strbuf"  was declared but never referenced
-  	uint8_t value_strbuf[6];
-..\User\Tasks\Src\user_SensUpdateTask.c: 3 warnings, 0 errors
+compiling ui_font_Cuyuan80.c...
+compiling ui_SOSPage.c...
 linking...
-Program Size: Code=199840 RO-data=208672 RW-data=2496 ZI-data=102920  
+Program Size: Code=199840 RO-data=211476 RW-data=2496 ZI-data=102920  
 FromELF: creating hex file...
 After Build - User command #1: fromelf.exe --bin -o "c:\Users\zerokelvin\Desktop\OV-Watch\Software\Watch_pro_1.0\MDK-ARM\output\OV_Watch.bin" "c:\Users\zerokelvin\Desktop\OV-Watch\Software\Watch_pro_1.0\MDK-ARM\output\OV_Watch.axf
-".\output\OV_Watch.axf" - 0 Error(s), 5 Warning(s).
+".\output\OV_Watch.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -68,7 +56,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE@6.2.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:07
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

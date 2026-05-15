@@ -98,30 +98,30 @@ void ui_SOSPage_screen_init(void)
 
     sos_countdown = 5;  /* 重置倒计时 */
 
-    /* 创建全屏页面 */
+    /* 创建全屏页面 - 暗红背景 */
     ui_SOSPage = lv_obj_create(NULL);
     lv_obj_clear_flag(ui_SOSPage, LV_OBJ_FLAG_SCROLLABLE);
-    lv_obj_set_style_bg_color(ui_SOSPage, lv_color_hex(0xCC0000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_SOSPage, lv_color_hex(0x990000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_SOSPage, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    /* "SOS" 大字 */
+    /* "SOS" 大字 - 亮红色，居中偏上 */
     ui_SOS_TitleLabel = lv_label_create(ui_SOSPage);
     lv_obj_set_width(ui_SOS_TitleLabel, LV_SIZE_CONTENT);
     lv_obj_set_height(ui_SOS_TitleLabel, LV_SIZE_CONTENT);
     lv_obj_set_x(ui_SOS_TitleLabel, 0);
-    lv_obj_set_y(ui_SOS_TitleLabel, -70);
+    lv_obj_set_y(ui_SOS_TitleLabel, -65);
     lv_obj_set_align(ui_SOS_TitleLabel, LV_ALIGN_CENTER);
     lv_label_set_text(ui_SOS_TitleLabel, "SOS");
-    lv_obj_set_style_text_color(ui_SOS_TitleLabel, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui_SOS_TitleLabel, lv_color_hex(0xFF0000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_SOS_TitleLabel, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_SOS_TitleLabel, &ui_font_Cuyuan80, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    /* 异常原因文字 */
+    /* 异常原因文字 - 白色，SOS下方 */
     ui_SOS_ReasonLabel = lv_label_create(ui_SOSPage);
     lv_obj_set_width(ui_SOS_ReasonLabel, 200);
     lv_obj_set_height(ui_SOS_ReasonLabel, LV_SIZE_CONTENT);
     lv_obj_set_x(ui_SOS_ReasonLabel, 0);
-    lv_obj_set_y(ui_SOS_ReasonLabel, -10);
+    lv_obj_set_y(ui_SOS_ReasonLabel, 10);
     lv_obj_set_align(ui_SOS_ReasonLabel, LV_ALIGN_CENTER);
     lv_label_set_long_mode(ui_SOS_ReasonLabel, LV_LABEL_LONG_WRAP);
     lv_label_set_text(ui_SOS_ReasonLabel, "异常");
@@ -134,28 +134,28 @@ void ui_SOSPage_screen_init(void)
     if(strlen(reason_buf) > 0)
         lv_label_set_text(ui_SOS_ReasonLabel, reason_buf);
 
-    /* 倒计时文字 */
+    /* 倒计时文字 - 黄色，原因下方 */
     ui_SOS_CountdownLabel = lv_label_create(ui_SOSPage);
     lv_obj_set_width(ui_SOS_CountdownLabel, LV_SIZE_CONTENT);
     lv_obj_set_height(ui_SOS_CountdownLabel, LV_SIZE_CONTENT);
     lv_obj_set_x(ui_SOS_CountdownLabel, 0);
-    lv_obj_set_y(ui_SOS_CountdownLabel, 35);
+    lv_obj_set_y(ui_SOS_CountdownLabel, 50);
     lv_obj_set_align(ui_SOS_CountdownLabel, LV_ALIGN_CENTER);
     lv_label_set_text(ui_SOS_CountdownLabel, "5秒后自动上报");
     lv_obj_set_style_text_color(ui_SOS_CountdownLabel, lv_color_hex(0xFFFF00), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_SOS_CountdownLabel, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_SOS_CountdownLabel, &ui_font_Cuyuan20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    /* 按键提示 */
+    /* 按键提示 - 半透明白色，底部 */
     ui_SOS_HintLabel = lv_label_create(ui_SOSPage);
     lv_obj_set_width(ui_SOS_HintLabel, LV_SIZE_CONTENT);
     lv_obj_set_height(ui_SOS_HintLabel, LV_SIZE_CONTENT);
     lv_obj_set_x(ui_SOS_HintLabel, 0);
-    lv_obj_set_y(ui_SOS_HintLabel, 70);
+    lv_obj_set_y(ui_SOS_HintLabel, 90);
     lv_obj_set_align(ui_SOS_HintLabel, LV_ALIGN_CENTER);
     lv_label_set_text(ui_SOS_HintLabel, "按任意键取消");
     lv_obj_set_style_text_color(ui_SOS_HintLabel, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui_SOS_HintLabel, 200, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_SOS_HintLabel, 160, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_SOS_HintLabel, &ui_font_Cuyuan18, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     /* 创建1秒定时器 */
