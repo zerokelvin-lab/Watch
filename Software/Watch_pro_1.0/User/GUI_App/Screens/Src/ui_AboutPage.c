@@ -55,8 +55,8 @@ void ui_AboutPage_screen_init(void)
     lv_obj_set_height(ui_NameTextLabel, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_NameTextLabel, 25);
     lv_obj_set_y(ui_NameTextLabel, 40);
-    lv_label_set_text(ui_NameTextLabel, "OV-Watch");
-    lv_obj_set_style_text_font(ui_NameTextLabel, &lv_font_montserrat_18, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_label_set_text(ui_NameTextLabel, "AI智慧康养平台");
+    lv_obj_set_style_text_font(ui_NameTextLabel, &ui_font_Cuyuan20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     // 固件版本行
     ui_VersionLabel = lv_label_create(ui_AboutPage);
@@ -152,7 +152,7 @@ void ui_AboutPage_screen_init(void)
     lv_obj_set_height(ui_AuthorHTextLabel, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_AuthorHTextLabel, 25);
     lv_obj_set_y(ui_AuthorHTextLabel, 290);
-    lv_label_set_text(ui_AuthorHTextLabel, "Kingham");
+    lv_label_set_text(ui_AuthorHTextLabel, "zerokelvin");
     lv_obj_set_style_text_font(ui_AuthorHTextLabel, &lv_font_montserrat_18, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     // 软件开发者行
@@ -171,7 +171,7 @@ void ui_AboutPage_screen_init(void)
     lv_obj_set_height(ui_AuthorSTextLabel, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_AuthorSTextLabel, 25);
     lv_obj_set_y(ui_AuthorSTextLabel, 340);
-    lv_label_set_text(ui_AuthorSTextLabel, "Kingham");
+    lv_label_set_text(ui_AuthorSTextLabel, "zerokelvin");
     lv_obj_set_style_text_font(ui_AuthorSTextLabel, &lv_font_montserrat_18, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     // 界面设计者行
@@ -190,7 +190,7 @@ void ui_AboutPage_screen_init(void)
     lv_obj_set_height(ui_AuthorGTextLabel, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_AuthorGTextLabel, 25);
     lv_obj_set_y(ui_AuthorGTextLabel, 390);
-    lv_label_set_text(ui_AuthorGTextLabel, "Kingham");
+    lv_label_set_text(ui_AuthorGTextLabel, "zerokelvin");
     lv_obj_set_style_text_font(ui_AuthorGTextLabel, &lv_font_montserrat_18, LV_PART_MAIN | LV_STATE_DEFAULT);
 
 }

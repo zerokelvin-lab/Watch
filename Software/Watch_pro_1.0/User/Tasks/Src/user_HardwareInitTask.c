@@ -175,10 +175,10 @@ void HardwareInitTask(void *argument)
     LCD_Fill(0,0, LCD_W, LCD_H, BLACK);  // 清屏黑色
     delay_ms(10);
     LCD_Set_Light(50);  // 背光亮度50%
-    LCD_ShowString(72,LCD_H/2,(uint8_t*)"Welcome!", WHITE, BLACK, 24, 0);//12*6,16*8,24*12,32*16
+    LCD_ShowString(30, LCD_H/2, (uint8_t*)"AI Smart Health", WHITE, BLACK, 24, 0);
     uint8_t lcd_buf_str[17];
-    sprintf(lcd_buf_str, "OV-Watch V%d.%d.%d", watch_version_major(), watch_version_minor(), watch_version_patch());  // 显示版本号
-    LCD_ShowString(34, LCD_H/2+48, (uint8_t*)lcd_buf_str, WHITE, BLACK, 24, 0);
+    sprintf(lcd_buf_str, "V%d.%d.%d", watch_version_major(), watch_version_minor(), watch_version_patch());  // 显示版本号
+    LCD_ShowString(84, LCD_H/2+48, (uint8_t*)lcd_buf_str, WHITE, BLACK, 24, 0);
     delay_ms(1000);  // 停留1秒
     LCD_Fill(0, LCD_H/2-24, LCD_W, LCD_H/2+49, BLACK);  // 清除欢迎信息
 
