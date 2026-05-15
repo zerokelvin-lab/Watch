@@ -29,12 +29,6 @@ lv_obj_t * ui_MenuCalButton;
 lv_obj_t * ui_MenuCalicon;
 lv_obj_t * ui_MenuCalLabel;
 
-// 计算器入口
-lv_obj_t * ui_MenuComPanel;
-lv_obj_t * ui_MenuComButton;
-lv_obj_t * ui_MenuComicon;
-lv_obj_t * ui_MenuComLabel;
-
 // 秒表入口
 lv_obj_t * ui_MenuTimPanel;
 lv_obj_t * ui_MenuTimButton;
@@ -59,7 +53,7 @@ lv_obj_t * ui_MenuHRButton;
 lv_obj_t * ui_MenuHRicon;
 lv_obj_t * ui_MenuHRLabel;
 
-// 血氧入口
+// 其他体征检测入口
 lv_obj_t * ui_MenuO2Panel;
 lv_obj_t * ui_MenuO2Button;
 lv_obj_t * ui_MenuO2icon;
@@ -76,12 +70,6 @@ lv_obj_t * ui_MenuCPPanel;
 lv_obj_t * ui_MenuCPButton;
 lv_obj_t * ui_MenuCPicon;
 lv_obj_t * ui_MenuCPLabel;
-
-// 游戏入口
-lv_obj_t * ui_MenuGamePanel;
-lv_obj_t * ui_MenuGameButton;
-lv_obj_t * ui_MenuGameicon;
-lv_obj_t * ui_MenuGameLabel;
 
 // 设置入口
 lv_obj_t * ui_MenuSetPanel;
@@ -138,25 +126,6 @@ void ui_event_MenuCalPanel(lv_event_t * e)
 
 
 		#endif
-	}
-}
-
-/**
- * @brief  计算器入口点击 - 跳转计算器页面
- */
-void ui_event_MenuComPanel(lv_event_t * e)
-{
-	lv_event_code_t event_code = lv_event_get_code(e);
-	lv_obj_t * target = lv_event_get_target(e);
-	if(event_code == LV_EVENT_CLICKED)
-	{
-			#if COMPUTER_PAGE_EN
-					Page_Load(&Page_Computer);
-			#else
-
-
-			#endif
-
 	}
 }
 
@@ -278,25 +247,6 @@ void ui_event_MenuCPPanel(lv_event_t * e)
 }
 
 /**
- * @brief  游戏入口点击 - 跳转游戏选择页面
- */
-void ui_event_MenuGamePanel(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-    if(event_code == LV_EVENT_CLICKED)
-    {
-        #if GAME_PAGE_EN
-			Page_Load(&Page_GameSelect);
-        #else
-
-
-        #endif
-
-    }
-}
-
-/**
  * @brief  设置入口点击 - 跳转设置页面
  */
 void ui_event_MenuSetPanel(lv_event_t * e)
@@ -382,54 +332,12 @@ void ui_MenuPage_screen_init(void)
     lv_label_set_text(ui_MenuCalLabel, "\xE6\x97\xA5 \xE5\x8E\x86"); // 日历
     lv_obj_set_style_text_font(ui_MenuCalLabel, &ui_font_Cuyuan20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    /* ====== 2. 计算器入口 ====== */
-    ui_MenuComPanel = lv_obj_create(ui_MenuPage);
-    lv_obj_set_width(ui_MenuComPanel, 240);
-    lv_obj_set_height(ui_MenuComPanel, 70);
-    lv_obj_set_x(ui_MenuComPanel, 0);
-    lv_obj_set_y(ui_MenuComPanel, 70);
-    lv_obj_set_align(ui_MenuComPanel, LV_ALIGN_TOP_MID);
-    lv_obj_clear_flag(ui_MenuComPanel, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_radius(ui_MenuComPanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui_MenuComPanel, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui_MenuComPanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_border_color(ui_MenuComPanel, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_border_opa(ui_MenuComPanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui_MenuComPanel, lv_color_hex(0x808080), LV_PART_MAIN | LV_STATE_PRESSED);
-    lv_obj_set_style_bg_opa(ui_MenuComPanel, 100, LV_PART_MAIN | LV_STATE_PRESSED);
-
-    ui_MenuComButton = lv_btn_create(ui_MenuComPanel);
-    lv_obj_set_width(ui_MenuComButton, 40);
-    lv_obj_set_height(ui_MenuComButton, 40);
-    lv_obj_set_align(ui_MenuComButton, LV_ALIGN_LEFT_MID);
-    lv_obj_add_flag(ui_MenuComButton, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_MenuComButton, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_radius(ui_MenuComButton, 40, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui_MenuComButton, lv_color_hex(0xC86400), LV_PART_MAIN | LV_STATE_DEFAULT); // 橙色
-    lv_obj_set_style_bg_opa(ui_MenuComButton, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_MenuComicon = lv_label_create(ui_MenuComButton);
-    lv_obj_set_width(ui_MenuComicon, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_MenuComicon, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(ui_MenuComicon, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_MenuComicon, "\xEE\xA2\x9B"); // 计算器图标
-    lv_obj_set_style_text_font(ui_MenuComicon, &ui_font_iconfont28, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_MenuComLabel = lv_label_create(ui_MenuComPanel);
-    lv_obj_set_width(ui_MenuComLabel, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_MenuComLabel, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_MenuComLabel, 60);
-    lv_obj_set_y(ui_MenuComLabel, 0);
-    lv_obj_set_align(ui_MenuComLabel, LV_ALIGN_LEFT_MID);
-    lv_label_set_text(ui_MenuComLabel, "\xE8\xAE\xA1 \xE7\xAE\x97 \xE5\x99\xA8"); // 计算器
-    lv_obj_set_style_text_font(ui_MenuComLabel, &ui_font_Cuyuan20, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    /* ====== 3. 秒表入口 ====== */
+    /* ====== 2. 秒表入口 ====== */
     ui_MenuTimPanel = lv_obj_create(ui_MenuPage);
     lv_obj_set_width(ui_MenuTimPanel, 240);
     lv_obj_set_height(ui_MenuTimPanel, 70);
     lv_obj_set_x(ui_MenuTimPanel, 0);
-    lv_obj_set_y(ui_MenuTimPanel, 140);
+    lv_obj_set_y(ui_MenuTimPanel, 70);
     lv_obj_set_align(ui_MenuTimPanel, LV_ALIGN_TOP_MID);
     lv_obj_clear_flag(ui_MenuTimPanel, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_radius(ui_MenuTimPanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -466,12 +374,12 @@ void ui_MenuPage_screen_init(void)
     lv_label_set_text(ui_MenuTimLabel, "\xE7\xA7\x92 \xE8\xA1\xA8"); // 秒表
     lv_obj_set_style_text_font(ui_MenuTimLabel, &ui_font_Cuyuan20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    /* ====== 4. NFC卡包入口 ====== */
+    /* ====== 3. NFC卡包入口 ====== */
     ui_MenuCardPanel = lv_obj_create(ui_MenuPage);
     lv_obj_set_width(ui_MenuCardPanel, 240);
     lv_obj_set_height(ui_MenuCardPanel, 70);
     lv_obj_set_x(ui_MenuCardPanel, 0);
-    lv_obj_set_y(ui_MenuCardPanel, 210);
+    lv_obj_set_y(ui_MenuCardPanel, 140);
     lv_obj_set_align(ui_MenuCardPanel, LV_ALIGN_TOP_MID);
     lv_obj_clear_flag(ui_MenuCardPanel, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_radius(ui_MenuCardPanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -508,12 +416,12 @@ void ui_MenuPage_screen_init(void)
     lv_label_set_text(ui_MenuCardLabel, "\xE5\x8D\xA1 \xE5\x8C\x85"); // 卡包
     lv_obj_set_style_text_font(ui_MenuCardLabel, &ui_font_Cuyuan20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    /* ====== 5. 运动入口 ====== */
+    /* ====== 4. 运动入口 ====== */
     ui_MenuSprPanel = lv_obj_create(ui_MenuPage);
     lv_obj_set_width(ui_MenuSprPanel, 240);
     lv_obj_set_height(ui_MenuSprPanel, 70);
     lv_obj_set_x(ui_MenuSprPanel, 0);
-    lv_obj_set_y(ui_MenuSprPanel, 280);
+    lv_obj_set_y(ui_MenuSprPanel, 210);
     lv_obj_set_align(ui_MenuSprPanel, LV_ALIGN_TOP_MID);
     lv_obj_clear_flag(ui_MenuSprPanel, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_radius(ui_MenuSprPanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -550,12 +458,12 @@ void ui_MenuPage_screen_init(void)
     lv_label_set_text(ui_MenuSprLabel, "\xE8\xBF\x90 \xE5\x8A\xA8"); // 运动
     lv_obj_set_style_text_font(ui_MenuSprLabel, &ui_font_Cuyuan20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    /* ====== 6. 心率入口 ====== */
+    /* ====== 5. 心率入口 ====== */
     ui_MenuHRPanel = lv_obj_create(ui_MenuPage);
     lv_obj_set_width(ui_MenuHRPanel, 240);
     lv_obj_set_height(ui_MenuHRPanel, 70);
     lv_obj_set_x(ui_MenuHRPanel, 0);
-    lv_obj_set_y(ui_MenuHRPanel, 350);
+    lv_obj_set_y(ui_MenuHRPanel, 280);
     lv_obj_set_align(ui_MenuHRPanel, LV_ALIGN_TOP_MID);
     lv_obj_clear_flag(ui_MenuHRPanel, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_radius(ui_MenuHRPanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -592,12 +500,12 @@ void ui_MenuPage_screen_init(void)
     lv_label_set_text(ui_MenuHRLabel, "\xE5\xBF\x83 \xE7\x8E\x87"); // 心率
     lv_obj_set_style_text_font(ui_MenuHRLabel, &ui_font_Cuyuan20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    /* ====== 7. 血氧入口 ====== */
+    /* ====== 6. 其他体征检测入口 ====== */
     ui_MenuO2Panel = lv_obj_create(ui_MenuPage);
     lv_obj_set_width(ui_MenuO2Panel, 240);
     lv_obj_set_height(ui_MenuO2Panel, 70);
     lv_obj_set_x(ui_MenuO2Panel, 0);
-    lv_obj_set_y(ui_MenuO2Panel, 420);
+    lv_obj_set_y(ui_MenuO2Panel, 350);
     lv_obj_set_align(ui_MenuO2Panel, LV_ALIGN_TOP_MID);
     lv_obj_clear_flag(ui_MenuO2Panel, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_radius(ui_MenuO2Panel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -633,15 +541,15 @@ void ui_MenuPage_screen_init(void)
     lv_obj_set_x(ui_MenuO2Label, 60);
     lv_obj_set_y(ui_MenuO2Label, 0);
     lv_obj_set_align(ui_MenuO2Label, LV_ALIGN_LEFT_MID);
-    lv_label_set_text(ui_MenuO2Label, "\xE8\xA1\x80 \xE6\xB0\xA7"); // 血氧
+    lv_label_set_text(ui_MenuO2Label, "\xE5\x85\xB6\xE4\xBB\x96\xE4\xBD\x93\xE5\xBE\x81\xE6\xA3\x80\xE6\xB5\x8B"); // 其他体征检测
     lv_obj_set_style_text_font(ui_MenuO2Label, &ui_font_Cuyuan20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    /* ====== 8. 环境入口 ====== */
+    /* ====== 7. 环境入口 ====== */
     ui_MenuEnvPanel = lv_obj_create(ui_MenuPage);
     lv_obj_set_width(ui_MenuEnvPanel, 240);
     lv_obj_set_height(ui_MenuEnvPanel, 70);
     lv_obj_set_x(ui_MenuEnvPanel, 0);
-    lv_obj_set_y(ui_MenuEnvPanel, 490);
+    lv_obj_set_y(ui_MenuEnvPanel, 420);
     lv_obj_set_align(ui_MenuEnvPanel, LV_ALIGN_TOP_MID);
     lv_obj_clear_flag(ui_MenuEnvPanel, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_radius(ui_MenuEnvPanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -678,12 +586,12 @@ void ui_MenuPage_screen_init(void)
     lv_label_set_text(ui_MenuEnvLabel, "\xE7\x8E\xAF \xE5\xA2\x83"); // 环境
     lv_obj_set_style_text_font(ui_MenuEnvLabel, &ui_font_Cuyuan20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    /* ====== 9. 指南针入口 ====== */
+    /* ====== 8. 指南针入口 ====== */
     ui_MenuCPPanel = lv_obj_create(ui_MenuPage);
     lv_obj_set_width(ui_MenuCPPanel, 240);
     lv_obj_set_height(ui_MenuCPPanel, 70);
     lv_obj_set_x(ui_MenuCPPanel, 0);
-    lv_obj_set_y(ui_MenuCPPanel, 560);
+    lv_obj_set_y(ui_MenuCPPanel, 490);
     lv_obj_set_align(ui_MenuCPPanel, LV_ALIGN_TOP_MID);
     lv_obj_clear_flag(ui_MenuCPPanel, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_radius(ui_MenuCPPanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -720,55 +628,12 @@ void ui_MenuPage_screen_init(void)
     lv_label_set_text(ui_MenuCPLabel, "\xE6\x8C\x87 \xE5\x8D\x97 \xE9\x92\x88"); // 指南针
     lv_obj_set_style_text_font(ui_MenuCPLabel, &ui_font_Cuyuan20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    /* ====== 10. 游戏入口 ====== */
-    ui_MenuGamePanel = lv_obj_create(ui_MenuPage);
-    lv_obj_set_width(ui_MenuGamePanel, 240);
-    lv_obj_set_height(ui_MenuGamePanel, 70);
-    lv_obj_set_x(ui_MenuGamePanel, 0);
-    lv_obj_set_y(ui_MenuGamePanel, 630);
-    lv_obj_set_align(ui_MenuGamePanel, LV_ALIGN_TOP_MID);
-    lv_obj_clear_flag(ui_MenuGamePanel, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_radius(ui_MenuGamePanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui_MenuGamePanel, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui_MenuGamePanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_border_color(ui_MenuGamePanel, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_border_opa(ui_MenuGamePanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui_MenuGamePanel, lv_color_hex(0x808080), LV_PART_MAIN | LV_STATE_PRESSED);
-    lv_obj_set_style_bg_opa(ui_MenuGamePanel, 100, LV_PART_MAIN | LV_STATE_PRESSED);
-
-
-    ui_MenuGameButton = lv_btn_create(ui_MenuGamePanel);
-    lv_obj_set_width(ui_MenuGameButton, 40);
-    lv_obj_set_height(ui_MenuGameButton, 40);
-    lv_obj_set_align(ui_MenuGameButton, LV_ALIGN_LEFT_MID);
-    lv_obj_add_flag(ui_MenuGameButton, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_MenuGameButton, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_radius(ui_MenuGameButton, 40, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui_MenuGameButton, lv_color_hex(0xC07010), LV_PART_MAIN | LV_STATE_DEFAULT); // 金色
-    lv_obj_set_style_bg_opa(ui_MenuGameButton, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_MenuGameicon = lv_label_create(ui_MenuGameButton);
-    lv_obj_set_width(ui_MenuGameicon, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_MenuGameicon, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(ui_MenuGameicon, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_MenuGameicon, "\xEE\x98\xB5");
-    lv_obj_set_style_text_font(ui_MenuGameicon, &ui_font_iconfont30, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    ui_MenuGameLabel = lv_label_create(ui_MenuGamePanel);
-    lv_obj_set_width(ui_MenuGameLabel, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_MenuGameLabel, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_MenuGameLabel, 60);
-    lv_obj_set_y(ui_MenuGameLabel, 0);
-    lv_obj_set_align(ui_MenuGameLabel, LV_ALIGN_LEFT_MID);
-    lv_label_set_text(ui_MenuGameLabel, "\xE6\xB8\xB8 \xE6\x88\x8F"); // 游戏
-    lv_obj_set_style_text_font(ui_MenuGameLabel, &ui_font_Cuyuan20, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    /* ====== 11. 设置入口 ====== */
+    /* ====== 9. 设置入口 ====== */
     ui_MenuSetPanel = lv_obj_create(ui_MenuPage);
     lv_obj_set_width(ui_MenuSetPanel, 240);
     lv_obj_set_height(ui_MenuSetPanel, 70);
     lv_obj_set_x(ui_MenuSetPanel, 0);
-    lv_obj_set_y(ui_MenuSetPanel, 700);
+    lv_obj_set_y(ui_MenuSetPanel, 560);
     lv_obj_set_align(ui_MenuSetPanel, LV_ALIGN_TOP_MID);
     lv_obj_clear_flag(ui_MenuSetPanel, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_radius(ui_MenuSetPanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -805,12 +670,12 @@ void ui_MenuPage_screen_init(void)
     lv_label_set_text(ui_MenuSetLabel, "\xE8\xAE\xBE \xE7\xBD\xAE"); // 设置
     lv_obj_set_style_text_font(ui_MenuSetLabel, &ui_font_Cuyuan20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    /* ====== 12. 关于入口 ====== */
+    /* ====== 10. 关于入口 ====== */
     ui_MenuAbPanel = lv_obj_create(ui_MenuPage);
     lv_obj_set_width(ui_MenuAbPanel, 240);
     lv_obj_set_height(ui_MenuAbPanel, 70);
     lv_obj_set_x(ui_MenuAbPanel, 0);
-    lv_obj_set_y(ui_MenuAbPanel, 770);
+    lv_obj_set_y(ui_MenuAbPanel, 630);
     lv_obj_set_align(ui_MenuAbPanel, LV_ALIGN_TOP_MID);
     lv_obj_clear_flag(ui_MenuAbPanel, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_radius(ui_MenuAbPanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -853,7 +718,6 @@ void ui_MenuPage_screen_init(void)
 	// 注册所有入口的点击事件
 	lv_obj_add_event_cb(ui_MenuPage, ui_event_MenuPage, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui_MenuCalPanel, ui_event_MenuCalPanel, LV_EVENT_ALL, NULL);
-	lv_obj_add_event_cb(ui_MenuComPanel, ui_event_MenuComPanel, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui_MenuTimPanel, ui_event_MenuTimPanel, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui_MenuCardPanel, ui_event_MenuCardPanel, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui_MenuSprPanel, ui_event_MenuSprPanel, LV_EVENT_ALL, NULL);
@@ -861,7 +725,6 @@ void ui_MenuPage_screen_init(void)
 	lv_obj_add_event_cb(ui_MenuO2Panel, ui_event_MenuO2Panel, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui_MenuEnvPanel, ui_event_MenuEnvPanel, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui_MenuCPPanel, ui_event_MenuCPPanel, LV_EVENT_ALL, NULL);
-	lv_obj_add_event_cb(ui_MenuGamePanel, ui_event_MenuGamePanel, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui_MenuSetPanel, ui_event_MenuSetPanel, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui_MenuAbPanel, ui_event_MenuAbPanel, LV_EVENT_ALL, NULL);
 

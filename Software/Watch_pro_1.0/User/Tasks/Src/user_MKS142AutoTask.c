@@ -9,7 +9,11 @@
 #include "ui_MKS142Page.h"
 #include "ui_MKS142DetailPage.h"
 #include "user_SosTask.h"
+#include "comm_protocol.h"
 #include <stdlib.h>
+
+/* CommTask健康数据就绪标志 */
+extern volatile uint8_t comm_health_data_ready;
 
 #define AUTO_CHECK_TICKS     1000    /* 测量中每1秒检查一次 */
 #define AUTO_STABLE_SECONDS  5       /* 连续稳定秒数 */
@@ -185,6 +189,9 @@ void MKS142AutoMeasureTask(void *argument)
                     if(cur_rmssd < 22 || cur_rmssd > 120)  sos_type |= SOS_TYPE_HRV;
                     if(cur_fatigue < 15)                   sos_type |= SOS_TYPE_FATIGUE;
                     if(sos_type) SOS_Trigger(sos_type);
+
+                    /* 通知CommTask发送健康数据给ESP32 */
+                    comm_health_data_ready = 1;
 
                     MKS142_StopMeasure();
                     break;

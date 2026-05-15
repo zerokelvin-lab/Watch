@@ -28,12 +28,6 @@ extern lv_obj_t * ui_MenuCalButton;
 extern lv_obj_t * ui_MenuCalicon;
 extern lv_obj_t * ui_MenuCalLabel;
 
-// 计算器按钮
-extern lv_obj_t * ui_MenuComPanel;
-extern lv_obj_t * ui_MenuComButton;
-extern lv_obj_t * ui_MenuComicon;
-extern lv_obj_t * ui_MenuComLabel;
-
 // 秒表按钮
 extern lv_obj_t * ui_MenuTimPanel;
 extern lv_obj_t * ui_MenuTimButton;
@@ -58,7 +52,7 @@ extern lv_obj_t * ui_MenuHRButton;
 extern lv_obj_t * ui_MenuHRicon;
 extern lv_obj_t * ui_MenuHRLabel;
 
-// 血氧按钮
+// 其他体征检测按钮
 extern lv_obj_t * ui_MenuO2Panel;
 extern lv_obj_t * ui_MenuO2Button;
 extern lv_obj_t * ui_MenuO2icon;

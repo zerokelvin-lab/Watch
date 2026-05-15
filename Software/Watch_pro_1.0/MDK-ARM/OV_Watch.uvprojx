@@ -602,9 +602,9 @@
               <FilePath>..\User\Tasks\Src\user_MKS142AutoTask.c</FilePath>
             </File>
             <File>
-              <FileName>user_MessageSendTask.c</FileName>
+              <FileName>user_CommTask.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\Tasks\Src\user_MessageSendTask.c</FilePath>
+              <FilePath>..\User\Tasks\Src\user_CommTask.c</FilePath>
             </File>
             <File>
               <FileName>user_ChargCheckTask.c</FileName>
@@ -632,11 +632,6 @@
           <GroupName>Application/User/MidFunc</GroupName>
           <Files>
             <File>
-              <FileName>StrCalculate.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\Func\Src\StrCalculate.c</FilePath>
-            </File>
-            <File>
               <FileName>HWDataAccess.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Func\Src\HWDataAccess.c</FilePath>
@@ -645,6 +640,11 @@
               <FileName>PageManager.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Func\Src\PageManager.c</FilePath>
+            </File>
+            <File>
+              <FileName>comm_protocol.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Func\Src\comm_protocol.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -682,11 +682,6 @@
               <FilePath>..\User\GUI_App\Screens\Src\ui_CompassPage.c</FilePath>
             </File>
             <File>
-              <FileName>ui_ComputerPage.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\GUI_App\Screens\Src\ui_ComputerPage.c</FilePath>
-            </File>
-            <File>
               <FileName>ui_DateTimeSetPage.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\GUI_App\Screens\Src\ui_DateTimeSetPage.c</FilePath>
@@ -695,21 +690,6 @@
               <FileName>ui_EnvPage.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\GUI_App\Screens\Src\ui_EnvPage.c</FilePath>
-            </File>
-            <File>
-              <FileName>ui_Game2048Page.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\GUI_App\Screens\Src\ui_Game2048Page.c</FilePath>
-            </File>
-            <File>
-              <FileName>ui_GameMemPage.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\GUI_App\Screens\Src\ui_GameMemPage.c</FilePath>
-            </File>
-            <File>
-              <FileName>ui_GameSelectPage.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\GUI_App\Screens\Src\ui_GameSelectPage.c</FilePath>
             </File>
             <File>
               <FileName>ui_HomePage.c</FileName>

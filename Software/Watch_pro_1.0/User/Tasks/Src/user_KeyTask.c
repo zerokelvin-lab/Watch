@@ -56,12 +56,14 @@ void KeyTask(void *argument)
 				keystr = 3;
 				osMessageQueuePut(Key_MessageQueue, &keystr, 0, 1);
 				osMessageQueuePut(IdleBreak_MessageQueue, &IdleBreakstr, 0, 1);
+				osMessageQueuePut(VoiceKey_MessageQueue, &keystr, 0, 0);  // 通知CommTask语音唤醒
 				break;
 
 			case 4:  // KEY2双击
 				keystr = 4;
 				osMessageQueuePut(Key_MessageQueue, &keystr, 0, 1);
 				osMessageQueuePut(IdleBreak_MessageQueue, &IdleBreakstr, 0, 1);
+				osMessageQueuePut(VoiceKey_MessageQueue, &keystr, 0, 0);  // 通知CommTask语音唤醒
 				break;
 		}
 		osDelay(1);  // 1ms扫描周期

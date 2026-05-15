@@ -67,7 +67,7 @@ void HardwareInitTask(void *argument)
       Error_Handler();
     }
     // usart start  // 启动串口DMA接收
-    HAL_UART_Receive_DMA(&huart1,(uint8_t*)HardInt_receive_str,25);
+    HAL_UART_Receive_DMA(&huart1,(uint8_t*)HardInt_receive_str,520);
     __HAL_UART_ENABLE_IT(&huart1,UART_IT_IDLE);  // 使能串口空闲中断
 
     // PWM Start  // 启动PWM（用于背光控制）

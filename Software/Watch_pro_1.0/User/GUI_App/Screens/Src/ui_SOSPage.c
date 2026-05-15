@@ -25,6 +25,15 @@ static lv_timer_t * ui_SOSPageTimer = NULL;
 static uint8_t sos_countdown = 5;  /* 倒计时秒数 */
 
 /**
+ * @brief  延迟执行Page_Back（避免在定时器回调中销毁自身）
+ */
+static void sos_deferred_back(void *arg)
+{
+    (void)arg;
+    Page_Back();
+}
+
+/**
  * @brief  根据异常类型编码生成原因文字
  */
 static void sos_get_reason_text(char *buf, uint8_t type)
@@ -58,8 +67,8 @@ static void SOSPage_timer_cb(lv_timer_t * timer)
     uint8_t key_val;
     if(osMessageQueueGet(Key_MessageQueue, &key_val, NULL, 0) == osOK)
     {
-        /* 任意按键 → 取消SOS */
-        SOS_Cancel();
+        /* 任意按键 → 延迟取消SOS（不能在定时器回调中销毁自身） */
+        lv_async_call(sos_deferred_back, NULL);
         return;
     }
 
@@ -72,11 +81,11 @@ static void SOSPage_timer_cb(lv_timer_t * timer)
         lv_label_set_text(ui_SOS_CountdownLabel, buf);
     }
 
-    /* 倒计时结束 → 上报 */
+    /* 倒计时结束 → 上报并延迟返回（避免在定时器回调中销毁自身） */
     if(sos_countdown == 0)
     {
         SOS_Report(sos_abnormal_type);
-        Page_Back();
+        lv_async_call(sos_deferred_back, NULL);
     }
 }
 

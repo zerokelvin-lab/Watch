@@ -1,0 +1,12 @@
+.\output\lv_async.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_async.c
+.\output\lv_async.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_async.h
+.\output\lv_async.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_types.h
+.\output\lv_async.o: D:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdint.h
+.\output\lv_async.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_mem.h
+.\output\lv_async.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_internal.h
+.\output\lv_async.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_kconfig.h
+.\output\lv_async.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../../../lv_conf.h
+.\output\lv_async.o: D:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stddef.h
+.\output\lv_async.o: D:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\string.h
+.\output\lv_async.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_timer.h
+.\output\lv_async.o: D:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdbool.h

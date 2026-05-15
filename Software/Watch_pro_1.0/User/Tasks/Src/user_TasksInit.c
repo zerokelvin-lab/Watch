@@ -21,7 +21,7 @@
 #include "user_ScrRenewTask.h"
 #include "user_SensUpdateTask.h"
 #include "user_ChargCheckTask.h"
-#include "user_MessageSendTask.h"
+#include "user_CommTask.h"
 #include "user_DataSaveTask.h"
 #include "user_MKS142AutoTask.h"
 #include "fall_detect.h"
@@ -117,11 +117,11 @@ const osThreadAttr_t ChargPageEnterTask_attributes = {
   .priority = (osPriority_t) osPriorityLow1,
 };
 
-//messagesendtask  // BLE消息收发任务
-osThreadId_t MessageSendTaskHandle;
-const osThreadAttr_t MessageSendTask_attributes = {
-  .name = "MessageSendTask",
-  .stack_size = 128 * 5,
+//CommTask  // ESP32通信任务
+osThreadId_t CommTaskHandle;
+const osThreadAttr_t CommTask_attributes = {
+  .name = "CommTask",
+  .stack_size = 128 * 8,
   .priority = (osPriority_t) osPriorityLow1,
 };
 
@@ -145,7 +145,7 @@ const osThreadAttr_t DataSaveTask_attributes = {
 osThreadId_t MKS142AutoTaskHandle;
 const osThreadAttr_t MKS142AutoTask_attributes = {
   .name = "MKS142AutoTask",
-  .stack_size = 128 * 4,
+  .stack_size = 128 * 8,
   .priority = (osPriority_t) osPriorityLow2,
 };
 
@@ -153,8 +153,8 @@ const osThreadAttr_t MKS142AutoTask_attributes = {
 osThreadId_t SOSTaskHandle;
 const osThreadAttr_t SOSTask_attributes = {
   .name = "SOSTask",
-  .stack_size = 128 * 10,
-  .priority = (osPriority_t) osPriorityNormal,
+  .stack_size = 128 * 1,
+  .priority = (osPriority_t) osPriorityLow,
 };
 
 
@@ -173,6 +173,8 @@ osMessageQueueId_t HomeUpdata_MessageQueue;
 osMessageQueueId_t DataSave_MessageQueue;
 /** @brief SOS消息队列 */
 osMessageQueueId_t SOS_MessageQueue;
+/** @brief 双击按键消息队列 (用于语音唤醒) */
+osMessageQueueId_t VoiceKey_MessageQueue;
 /** @brief 硬件中断事件句柄 */
 osEventFlagsId_t HardIntEventHandle;
 
@@ -200,6 +202,7 @@ void User_Tasks_Init(void)
 	IdleBreak_MessageQueue = osMessageQueueNew(1, 1, NULL);  // 空闲打断消息队列
 	HomeUpdata_MessageQueue = osMessageQueueNew(1, 1, NULL); // 首页更新消息队列
   SOS_MessageQueue = osMessageQueueNew(1, 1, NULL);         // SOS消息队列
+  VoiceKey_MessageQueue = osMessageQueueNew(1, 1, NULL);    // 双击按键队列(语音唤醒)
 	DataSave_MessageQueue = osMessageQueueNew(2, 1, NULL);   // 数据保存消息队列
   HardIntEventHandle = osEventFlagsNew(NULL);               // 硬件中断事件标志组
 
@@ -214,7 +217,7 @@ void User_Tasks_Init(void)
 	SensorDataTaskHandle = osThreadNew(SensorDataUpdateTask, NULL, &SensorDataTask_attributes);
 	HRDataTaskHandle		 = osThreadNew(HRDataUpdateTask, NULL, &HRDataTask_attributes);
 	ChargPageEnterTaskHandle = osThreadNew(ChargPageEnterTask, NULL, &ChargPageEnterTask_attributes);
-  MessageSendTaskHandle = osThreadNew(MessageSendTask, NULL, &MessageSendTask_attributes);
+  CommTaskHandle = osThreadNew(CommTask, NULL, &CommTask_attributes);
 	MPUCheckTaskHandle		= osThreadNew(MPUCheckTask, NULL, &MPUCheckTask_attributes);
 	DataSaveTaskHandle		= osThreadNew(DataSaveTask, NULL, &DataSaveTask_attributes);
 	MKS142AutoTaskHandle  = osThreadNew(MKS142AutoMeasureTask, NULL, &MKS142AutoTask_attributes);

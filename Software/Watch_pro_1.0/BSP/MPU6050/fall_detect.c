@@ -18,8 +18,8 @@
 #define ACCEL_TO_CG_DEN   16384
 
 /* 默认阈值 (整数单位) */
-#define DEFAULT_FREEFALL_CG       70      /* 0.70g = 70 centi-g */
-#define DEFAULT_IMPACT_CG         150     /* 1.50g = 150 centi-g */
+#define DEFAULT_FREEFALL_CG       60      /* 0.70g = 70 centi-g */
+#define DEFAULT_IMPACT_CG         120     /* 1.50g = 150 centi-g */
 #define DEFAULT_TILT_DECIDEG      450     /* 45.0度 = 450 deci-degree */
 #define DEFAULT_FALL_WINDOW_MS    2000
 #define DEFAULT_CONFIRM_DELAY_MS  500
@@ -64,7 +64,7 @@ void FallDetect_Init(FallDetect_ConfigTypeDef *cfg)
     state = FALL_STATE_NORMAL;
     filtered_acc_cg = 100;
     state_timestamp = 0;
-    debug_enabled = 1;
+    debug_enabled = 0;
 }
 
 /**

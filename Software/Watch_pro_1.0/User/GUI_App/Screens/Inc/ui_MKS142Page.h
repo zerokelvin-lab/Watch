@@ -9,6 +9,7 @@ extern "C" {
 #endif
 
 #include "lvgl/lvgl.h"
+#include "PageManager.h"
 
 extern lv_obj_t * ui_MKS142Page;          // 健康页面对象
 extern lv_obj_t * ui_MKS142HRNum;         // 心率数字

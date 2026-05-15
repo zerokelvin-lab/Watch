@@ -9,6 +9,7 @@ extern "C" {
 #endif
 
 #include "lvgl/lvgl.h"
+#include "PageManager.h"
 
 extern lv_obj_t * ui_MKS142DetailPage;       // 详情页面对象
 extern lv_obj_t * ui_MKS142DetailFatigueNum; // 疲劳数字

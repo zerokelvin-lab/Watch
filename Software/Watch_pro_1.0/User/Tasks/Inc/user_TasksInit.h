@@ -41,6 +41,8 @@ extern osMessageQueueId_t HomeUpdata_MessageQueue;
 extern osMessageQueueId_t DataSave_MessageQueue;
 /** @brief SOS消息队列 */
 extern osMessageQueueId_t SOS_MessageQueue;
+/** @brief 双击按键消息队列 (用于语音唤醒) */
+extern osMessageQueueId_t VoiceKey_MessageQueue;
 /** @brief 硬件中断事件句柄 - 用于UART和充电器的中断事件通知 */
 extern osEventFlagsId_t HardIntEventHandle;
 
