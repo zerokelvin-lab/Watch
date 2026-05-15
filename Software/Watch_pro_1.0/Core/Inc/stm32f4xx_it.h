@@ -45,9 +45,7 @@
 /* USER CODE BEGIN EM */
 // UART硬件中断接收缓冲区（520字节），在其他模块中可extern引用（支持二进制帧协议）
 extern uint8_t HardInt_receive_str[520];
-// UART接收状态: 0=空闲(等待数据), 1=数据就绪(等待任务处理)
-extern volatile uint8_t  HardInt_rx_ready;
-// UART接收实际长度（ISR中DMA停止后设置，任务处理后重启DMA）
+// UART接收实际长度（ISR中在重启DMA前设置，任务直接使用）
 extern volatile uint16_t HardInt_rx_len;
 /* USER CODE END EM */
 

@@ -72,9 +72,7 @@ extern TIM_HandleTypeDef htim1;
 /* USER CODE BEGIN EV */
 // UART硬件中断接收缓冲区（520字节，通过IDLE中断+DMA接收变长数据，支持二进制帧协议最大帧长）
 uint8_t HardInt_receive_str[520];
-// UART接收状态: 0=空闲(等待数据), 1=数据就绪(等待任务处理)
-volatile uint8_t  HardInt_rx_ready = 0;
-// UART接收实际长度（ISR中DMA停止后设置，任务处理后重启DMA）
+// UART接收实际长度（ISR中在重启DMA前设置，任务直接使用）
 volatile uint16_t HardInt_rx_len = 0;
 
 /* USER CODE END EV */
@@ -238,29 +236,21 @@ void USART1_IRQHandler(void)
   // 检查UART IDLE中断标志（一帧数据接收完成后的空闲状态）
   if(__HAL_UART_GET_FLAG(&huart1,UART_FLAG_IDLE)!=RESET)
   {
-    // 读SR+DR清除IDLE和RXNE标志（STM32F4要求先读SR再读DR）
-    (void)huart1.Instance->SR;
-    (void)huart1.Instance->DR;
-    // 仅在DMA活跃时处理（避免DMA已停止时读到错误的NDTR值）
-    if(!HardInt_rx_ready)
+    // 清除IDLE标志（读SR+DR）
+    __HAL_UART_CLEAR_IDLEFLAG(&huart1);
+    // 先读取接收长度（NDTR是剩余计数），再停止DMA，最后重启DMA
+    // 必须在重启DMA前保存长度，否则NDTR被重置为520
+    HardInt_rx_len = 520 - __HAL_DMA_GET_COUNTER(huart1.hdmarx);
+    HAL_UART_DMAStop(&huart1);
+    HAL_UART_Receive_DMA(&huart1, HardInt_receive_str, 520);
+    // 通知硬件中断处理任务有新数据到达
+    if(HardIntEventHandle != NULL)
     {
-      // 先读取接收长度（NDTR是剩余计数），再停止DMA
-      HardInt_rx_len = 520 - __HAL_DMA_GET_COUNTER(huart1.hdmarx);
-      // 在HAL_UART_IRQHandler之前停止DMA，防止HAL看到RXNE后重启DMA
-      HAL_UART_DMAStop(&huart1);
-      // 手动将UART状态重置为READY（HAL_UART_DMAStop不改State，导致后续HAL_UART_Transmit死等BUSY）
-      huart1.gState = HAL_UART_STATE_READY;
-      huart1.RxState = HAL_UART_STATE_READY;
-      HardInt_rx_ready = 1;
-      // 通知硬件中断处理任务有新数据到达
-      if(HardIntEventHandle != NULL)
-      {
-        osEventFlagsSet(HardIntEventHandle, HARDINT_EVENT_UART);
-      }
+      osEventFlagsSet(HardIntEventHandle, HARDINT_EVENT_UART);
     }
   }
   /* USER CODE END USART1_IRQn 0 */
-  // 调用HAL库UART中断处理（此时DMA已停止、RXNE已清除，HAL不会重启DMA）
+  // 调用HAL库UART中断处理
   HAL_UART_IRQHandler(&huart1);
   /* USER CODE BEGIN USART1_IRQn 1 */
 

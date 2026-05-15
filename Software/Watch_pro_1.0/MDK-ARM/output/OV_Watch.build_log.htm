@@ -27,12 +27,17 @@ Project File Date:  05/13/2026
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin'
 Build target 'OV_Watch'
-compiling stm32f4xx_it.c...
+compiling mpu6050.c...
+..\BSP\MPU6050\mpu6050.c(462): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	if(roll<=0.50 && roll>=-0.50 && pitch<=0.50 && pitch>=-0.50)  // ??????????€??????0.5??????(?????28.6???)
+..\BSP\MPU6050\mpu6050.c(462): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	if(roll<=0.50 && roll>=-0.50 && pitch<=0.50 && pitch>=-0.50)  // ??????????€??????0.5??????(?????28.6???)
+..\BSP\MPU6050\mpu6050.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=199864 RO-data=208672 RW-data=2496 ZI-data=102920  
+Program Size: Code=200080 RO-data=208672 RW-data=2496 ZI-data=102920  
 FromELF: creating hex file...
 After Build - User command #1: fromelf.exe --bin -o "c:\Users\zerokelvin\Desktop\OV-Watch\Software\Watch_pro_1.0\MDK-ARM\output\OV_Watch.bin" "c:\Users\zerokelvin\Desktop\OV-Watch\Software\Watch_pro_1.0\MDK-ARM\output\OV_Watch.axf
-".\output\OV_Watch.axf" - 0 Error(s), 0 Warning(s).
+".\output\OV_Watch.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 

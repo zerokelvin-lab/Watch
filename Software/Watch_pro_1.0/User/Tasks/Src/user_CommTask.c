@@ -36,7 +36,7 @@ void CommTask(void *argument)
         {
             osEventFlagsClear(HardIntEventHandle, HARDINT_EVENT_UART);
 
-            /* HardInt_rx_len由ISR在停止DMA前设置 */
+            /* HardInt_rx_len由ISR在停止/重启DMA前设置 */
             uint16_t rx_len = HardInt_rx_len;
             if(rx_len > 0 && rx_len <= 520)
             {
@@ -46,9 +46,6 @@ void CommTask(void *argument)
                        HardInt_receive_str[4]);
                 Comm_ParseFrame(HardInt_receive_str, rx_len);
             }
-            /* 处理完毕，清标志并重启DMA接收 */
-            HardInt_rx_ready = 0;
-            HAL_UART_Receive_DMA(&huart1, HardInt_receive_str, 520);
         }
 
         /* ====== 检测双击按键 → 语音唤醒 ====== */
